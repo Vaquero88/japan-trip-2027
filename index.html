@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🇯🇵 Japan Trip 2027</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">🇯🇵 <span>Japan Trip</span><small>2027</small></div>
+    <nav id="nav">
+      <button data-section="inicio" class="active">🏠 Inicio</button>
+      <button data-section="vuelos">✈️ Vuelos</button>
+      <button data-section="calendario">📅 Calendario</button>
+      <button data-section="itinerario">🗺️ Itinerario</button>
+      <button data-section="alojamientos">🏨 Alojamientos</button>
+      <button data-section="transportes">🚆 Transportes</button>
+      <button data-section="reservas">🎟️ Reservas</button>
+      <button data-section="gastos">💴 Gastos</button>
+      <button data-section="lugares">📍 Lugares</button>
+      <button data-section="notas">📝 Notas</button>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="mobile-header">
+      <button id="menuBtn">☰</button>
+      <strong>🇯🇵 Japan Trip 2027</strong>
+    </header>
+
+    <section id="inicio" class="section active-section">
+      <div class="hero">
+        <div><span class="eyebrow">VIAJE · MAYO 2027</span><h1>🇯🇵 Japón</h1><p>Tokio · Nikko · Hakone · Kioto · Osaka</p></div>
+        <div class="countdown"><span id="daysToTrip">—</span><small>días para el viaje</small></div>
+      </div>
+      <div class="cards four">
+        <div class="card"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
+        <div class="card"><small>PERSONAS</small><b>4</b><span>Viajando juntos</span></div>
+        <div class="card"><small>CIUDADES</small><b>5</b><span>Tokio · Nikko · Hakone · Kioto · Osaka</span></div>
+        <div class="card"><small>VUELOS</small><b>4 tramos</b><span>MAD → TFU → NRT / KIX → PEK → MAD</span></div>
+      </div>
+      <div class="panel">
+        <h2>Próximos momentos</h2>
+        <div class="timeline">
+          <div><strong>18 mayo · 15:10</strong><span>✈️ Llegada a Tokio · Narita</span></div>
+          <div><strong>23 mayo · 15:00</strong><span>🏨 Check-in Fukuzumiro · Hakone</span></div>
+          <div><strong>24 mayo · 16:00</strong><span>🏨 Check-in alojamiento de Kioto</span></div>
+          <div><strong>29 mayo · 16:00</strong><span>🏨 Check-in alojamiento de Osaka</span></div>
+          <div><strong>31 mayo · 09:05</strong><span>✈️ Osaka → Pekín → Madrid</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vuelos" class="section">
+      <div class="section-title"><div><span class="eyebrow">TRANSPORTE AÉREO</span><h1>✈️ Vuelos</h1></div></div>
+      <div id="flightList" class="stack"></div>
+    </section>
+
+    <section id="calendario" class="section">
+      <div class="section-title"><div><span class="eyebrow">18 — 31 MAYO</span><h1>📅 Calendario</h1></div></div>
+      <div class="calendar" id="calendar"></div>
+      <div id="calendarDetail"></div>
+    </section>
+
+    <section id="itinerario" class="section">
+      <div class="section-title"><div><span class="eyebrow">PLAN DEL VIAJE</span><h1>🗺️ Itinerario</h1></div></div>
+      <div id="itineraryList" class="stack"></div>
+    </section>
+
+    <section id="alojamientos" class="section">
+      <div class="section-title"><div><span class="eyebrow">4 PERSONAS</span><h1>🏨 Alojamientos</h1></div></div>
+      <div id="stayList" class="stack"></div>
+    </section>
+
+    <section id="transportes" class="section">
+      <div class="section-title"><div><span class="eyebrow">CÓMO MOVERSE</span><h1>🚆 Transportes</h1></div></div>
+      <div class="empty">Esta sección está preparada para añadir las rutas del PDF y las opciones que vayamos confirmando.</div>
+    </section>
+
+    <section id="reservas" class="section">
+      <div class="section-title"><div><span class="eyebrow">ENTRADAS Y RESERVAS</span><h1>🎟️ Reservas</h1></div></div>
+      <div class="empty">Aquí iremos añadiendo restaurantes, entradas, actividades y reservas confirmadas.</div>
+    </section>
+
+    <section id="gastos" class="section">
+      <div class="section-title"><div><span class="eyebrow">CONTROL</span><h1>💴 Gastos</h1></div></div>
+      <div class="cards three"><div class="card"><small>ALOJAMIENTOS</small><b>2.413,86 €</b><span>Importes facilitados hasta ahora</span></div><div class="card"><small>POR PERSONA</small><b>603,47 €</b><span>Solo alojamientos</span></div><div class="card"><small>RESTO</small><b>—</b><span>Lo iremos completando</span></div></div>
+    </section>
+
+    <section id="lugares" class="section">
+      <div class="section-title"><div><span class="eyebrow">MAPA DEL VIAJE</span><h1>📍 Lugares</h1></div></div>
+      <div class="empty">Podremos guardar lugares con enlace directo a Google Maps.</div>
+    </section>
+
+    <section id="notas" class="section">
+      <div class="section-title"><div><span class="eyebrow">APUNTES</span><h1>📝 Notas</h1></div></div>
+      <textarea id="notes" placeholder="Escribe aquí notas del viaje..."></textarea>
+    </section>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
