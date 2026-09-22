@@ -32,6 +32,23 @@
 
     <section id="inicio" class="section active-section">
       <div class="hero hero-fuji">
+<div class="world-clocks" aria-label="Hora local en España y Japón">
+  <div class="world-clock">
+    <div class="clock-top"><span class="clock-flag">🇪🇸</span><span>ESPAÑA</span></div>
+    <div class="clock-city">Madrid</div>
+    <div class="clock-time" id="spainClock">--:--:--</div>
+    <div class="clock-date" id="spainDate">—</div>
+  </div>
+  <div class="clock-separator">↔</div>
+  <div class="world-clock">
+    <div class="clock-top"><span class="clock-flag">🇯🇵</span><span>JAPÓN</span></div>
+    <div class="clock-city">Tokio</div>
+    <div class="clock-time" id="japanClock">--:--:--</div>
+    <div class="clock-date" id="japanDate">—</div>
+    <div class="clock-diff" id="clockDiff">+7 h respecto a España</div>
+  </div>
+</div>
+
         <div class="hero-overlay"><span class="eyebrow">VIAJE · MAYO 2027</span><h1>🇯🇵 Japón</h1><p>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</p></div>
         <div class="countdown"><span id="daysToTrip">—</span><small>días para el viaje</small></div>
       </div>
@@ -84,26 +101,33 @@
     </section>
 
     <section id="gastos" class="section">
-      <div class="section-title"><div><span class="eyebrow">CONTROL DEL PRESUPUESTO</span><h1>💴 Gastos</h1></div></div>
-      <div class="cards three">
-        <div class="card"><small>TOTAL VIAJE</small><b id="expenseTotal">—</b><span>Alojamientos + seguro + vuelos</span></div>
-        <div class="card"><small>POR PERSONA</small><b id="expensePerPerson">—</b><span>Repartido entre 4 personas</span></div>
-        <div class="card"><small>ALOJAMIENTOS</small><b id="expenseAccommodation">—</b><span>Tokio · Hakone · Kioto · Osaka</span></div>
-      </div>
-      <div class="panel" style="margin-bottom:18px">
-        <h2>Desglose de gastos</h2>
-        <p class="muted">Cada gasto indica claramente a qué ciudad, trayecto o concepto corresponde.</p>
+      <div class="section-title">
+        <div><span class="eyebrow">CONTROL DEL PRESUPUESTO</span><h1>💴 Gastos</h1></div>
       </div>
 
-      <div class="panel" style="margin-bottom:18px">
-        <h2>👥 Gastos personales</h2>
-        <p class="muted">Más adelante podremos añadir una función para que cada persona introduzca sus propios gastos y la app calcule automáticamente quién ha pagado cada cosa y cuánto corresponde a cada uno.</p>
-        <div class="expense-examples">
-          <div class="example-expense">👤 Fernando · Cena en Tokio · <b>85 €</b></div>
-          <div class="example-expense">👤 Persona 2 · Entrada Universal · <b>320 €</b></div>
-          <div class="example-expense">👤 Persona 3 · Taxi · <b>25 €</b></div>
+      <div class="cards four">
+        <div class="card">
+          <small>TOTAL DEL VIAJE</small>
+          <b id="expenseTotal">—</b>
+          <span>Todos los gastos registrados</span>
+        </div>
+        <div class="card">
+          <small>POR PERSONA</small>
+          <b id="expensePerPerson">—</b>
+          <span>Repartido entre 4 personas</span>
+        </div>
+        <div class="card">
+          <small>ALOJAMIENTOS</small>
+          <b id="expenseAccommodation">—</b>
+          <span>Tokio · Hakone · Kioto · Osaka</span>
+        </div>
+        <div class="card">
+          <small>VUELOS</small>
+          <b id="expenseFlights">—</b>
+          <span>Ida + vuelta · 4 personas</span>
         </div>
       </div>
+
       <div id="expenseList" class="stack"></div>
     </section>
 

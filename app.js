@@ -33,6 +33,8 @@ function init(){
   $("#expenseTotal").textContent=euro(expenseTotal);
   $("#expensePerPerson").textContent=euro(expenseTotal/4);
   $("#expenseAccommodation").textContent=euro(accommodationTotal);
+  const flightTotal = TRIP.expenses.filter(e=>e.category==="Vuelos de ida" || e.category==="Vuelos de vuelta").reduce((sum,e)=>sum+e.amount,0);
+  $("#expenseFlights").textContent=euro(flightTotal);
 
   $("#itineraryList").innerHTML=TRIP.days.map((d,i)=>`<article class="item"><div class="item-head"><div class="muted">${d[0]} mayo · día ${i+1}</div><h3>📍 ${d[1]}</h3><div>${d[2]}</div></div><div class="item-body"><p class="muted">Este día es editable. Aquí iremos añadiendo horarios, reservas, transporte, restaurantes y enlaces a mapas.</p></div></article>`).join("");
   const grid=$("#calendar"), detail=$("#calendarDetail"); let selected="18";
@@ -45,3 +47,45 @@ function init(){
   const notes=$("#notes");notes.value=localStorage.getItem("jp-notes")||"";notes.oninput=()=>localStorage.setItem("jp-notes",notes.value);
 }
 init();
+
+
+function updateWorldClocks(){
+  const fmtTime = (tz) => new Intl.DateTimeFormat("es-ES", {
+    timeZone: tz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+  });
+  const fmtDate = (tz) => new Intl.DateTimeFormat("es-ES", {
+    timeZone: tz, weekday: "short", day: "2-digit", month: "short"
+  });
+  const now = new Date();
+  const spain = fmtTime("Europe/Madrid").format(now);
+  const japan = fmtTime("Asia/Tokyo").format(now);
+  const spainDate = fmtDate("Europe/Madrid").format(now);
+  const japanDate = fmtDate("Asia/Tokyo").format(now);
+  const a = document.getElementById("spainClock");
+  const b = document.getElementById("japanClock");
+  const c = document.getElementById("spainDate");
+  const d = document.getElementById("japanDate");
+  if(a) a.textContent = spain;
+  if(b) b.textContent = japan;
+  if(c) c.textContent = spainDate;
+  if(d) d.textContent = japanDate;
+  const diff = document.getElementById("clockDiff");
+  if(diff){
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Europe/Madrid", timeZoneName: "longOffset"
+    }).formatToParts(now);
+    const partsJ = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Tokyo", timeZoneName: "longOffset"
+    }).formatToParts(now);
+    const getOffset = p => {
+      const v = p.find(x => x.type === "timeZoneName")?.value || "";
+      const m = v.match(/GMT([+-])(\d{2}):?(\d{2})?/);
+      if(!m) return null;
+      return (m[1] === "+" ? 1 : -1) * (parseInt(m[2],10) + (parseInt(m[3]||"0",10)/60));
+    };
+    const diffHours = (getOffset(partsJ) ?? 9) - (getOffset(parts) ?? 1);
+    diff.textContent = `${diffHours >= 0 ? "+" : ""}${diffHours} h respecto a España`;
+  }
+}
+updateWorldClocks();
+setInterval(updateWorldClocks, 1000);
