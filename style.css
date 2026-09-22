@@ -24,3 +24,10 @@
   .clock-city,.clock-date,.clock-diff{font-size:.65rem}
   .clock-separator{display:none}
 }
+
+.settleup-card{margin:20px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border:1px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:0 6px 22px rgba(0,0,0,.06)}
+.settleup-card h2{margin:4px 0 5px}
+.settleup-card p{margin:0;color:var(--muted)}
+.settleup-button{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;background:#111827;color:#fff;transition:transform .15s ease,opacity .15s ease}
+.settleup-button:hover{transform:translateY(-1px);opacity:.9}
+@media(max-width:650px){.settleup-card{flex-direction:column;align-items:stretch}.settleup-button{width:100%}}
