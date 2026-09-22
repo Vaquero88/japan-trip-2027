@@ -31,14 +31,13 @@
     </header>
 
     <section id="inicio" class="section active-section">
-      <div class="hero">
-        <div><span class="eyebrow">VIAJE · MAYO 2027</span><h1>🇯🇵 Japón</h1><p>Tokio · Nikko · Hakone · Kioto · Osaka</p></div>
+      <div class="hero hero-fuji">
+        <div class="hero-overlay"><span class="eyebrow">VIAJE · MAYO 2027</span><h1>🇯🇵 Japón</h1><p>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</p></div>
         <div class="countdown"><span id="daysToTrip">—</span><small>días para el viaje</small></div>
       </div>
-      <div class="cards four">
+      <div class="cards three">
         <div class="card"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
-        <div class="card"><small>PERSONAS</small><b>4</b><span>Viajando juntos</span></div>
-        <div class="card"><small>CIUDADES</small><b>5</b><span>Tokio · Nikko · Hakone · Kioto · Osaka</span></div>
+        <div class="card"><small>CIUDADES</small><b>6</b><span>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</span></div>
         <div class="card"><small>VUELOS</small><b>4 tramos</b><span>MAD → TFU → NRT / KIX → PEK → MAD</span></div>
       </div>
       <div class="panel">
@@ -70,7 +69,7 @@
     </section>
 
     <section id="alojamientos" class="section">
-      <div class="section-title"><div><span class="eyebrow">4 PERSONAS</span><h1>🏨 Alojamientos</h1></div></div>
+      <div class="section-title"><div><span class="eyebrow">ALOJAMIENTOS DEL VIAJE</span><h1>🏨 Alojamientos</h1></div></div>
       <div id="stayList" class="stack"></div>
     </section>
 
@@ -85,8 +84,27 @@
     </section>
 
     <section id="gastos" class="section">
-      <div class="section-title"><div><span class="eyebrow">CONTROL</span><h1>💴 Gastos</h1></div></div>
-      <div class="cards three"><div class="card"><small>ALOJAMIENTOS</small><b>2.413,86 €</b><span>Importes facilitados hasta ahora</span></div><div class="card"><small>POR PERSONA</small><b>603,47 €</b><span>Solo alojamientos</span></div><div class="card"><small>RESTO</small><b>—</b><span>Lo iremos completando</span></div></div>
+      <div class="section-title"><div><span class="eyebrow">CONTROL DEL PRESUPUESTO</span><h1>💴 Gastos</h1></div></div>
+      <div class="cards three">
+        <div class="card"><small>TOTAL VIAJE</small><b id="expenseTotal">—</b><span>Alojamientos + seguro + vuelos</span></div>
+        <div class="card"><small>POR PERSONA</small><b id="expensePerPerson">—</b><span>Repartido entre 4 personas</span></div>
+        <div class="card"><small>ALOJAMIENTOS</small><b id="expenseAccommodation">—</b><span>Tokio · Hakone · Kioto · Osaka</span></div>
+      </div>
+      <div class="panel" style="margin-bottom:18px">
+        <h2>Desglose de gastos</h2>
+        <p class="muted">Cada gasto indica claramente a qué ciudad, trayecto o concepto corresponde.</p>
+      </div>
+
+      <div class="panel" style="margin-bottom:18px">
+        <h2>👥 Gastos personales</h2>
+        <p class="muted">Más adelante podremos añadir una función para que cada persona introduzca sus propios gastos y la app calcule automáticamente quién ha pagado cada cosa y cuánto corresponde a cada uno.</p>
+        <div class="expense-examples">
+          <div class="example-expense">👤 Fernando · Cena en Tokio · <b>85 €</b></div>
+          <div class="example-expense">👤 Persona 2 · Entrada Universal · <b>320 €</b></div>
+          <div class="example-expense">👤 Persona 3 · Taxi · <b>25 €</b></div>
+        </div>
+      </div>
+      <div id="expenseList" class="stack"></div>
     </section>
 
     <section id="lugares" class="section">
