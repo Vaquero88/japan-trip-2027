@@ -19,6 +19,7 @@
       <button data-section="transportes">🚆 Transportes</button>
       <button data-section="reservas">🎟️ Reservas</button>
       <button data-section="gastos">💴 Gastos</button>
+      <button data-section="moneda">💱 Moneda</button>
       <button data-section="lugares">📍 Lugares</button>
       <button data-section="documentacion">📁 Documentación</button>
       <button data-section="notas">📝 Notas</button>
@@ -168,6 +169,65 @@
         </a>
       </div>
       <div id="expenseList" class="stack"></div>
+    </section>
+
+    <section id="moneda" class="section">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">CAMBIO DE MONEDA</span>
+          <h1>💱 Yen ↔ Euro</h1>
+        </div>
+      </div>
+
+      <div class="currency-rate panel">
+        <div>
+          <span class="eyebrow">CAMBIO DE REFERENCIA</span>
+          <h2>🇪🇺 1 € = <span id="eurJpyRate">—</span> ¥ 🇯🇵</h2>
+          <p id="currencyRateStatus" class="muted">Consultando el cambio más reciente…</p>
+        </div>
+      </div>
+
+      <div class="currency-converter panel">
+        <div class="currency-box">
+          <label for="currencyAmount">Cantidad</label>
+          <div class="currency-input-row">
+            <input id="currencyAmount" type="number" min="0" step="any" value="1000" inputmode="decimal">
+            <select id="currencyFrom" aria-label="Moneda de origen">
+              <option value="JPY">🇯🇵 JPY · Yen</option>
+              <option value="EUR">🇪🇺 EUR · Euro</option>
+            </select>
+          </div>
+        </div>
+        <button id="currencySwap" class="currency-swap" type="button" aria-label="Cambiar monedas">↕</button>
+        <div class="currency-result">
+          <span class="eyebrow">RESULTADO</span>
+          <strong id="currencyResult">5,53 €</strong>
+        </div>
+      </div>
+
+      <div class="currency-tables">
+        <div class="panel">
+          <h2>🇯🇵 Yen → Euros</h2>
+          <p class="muted">Orientación rápida con el cambio de referencia.</p>
+          <div class="currency-table-wrap">
+            <table class="currency-table">
+              <thead><tr><th>Yenes</th><th>Euros aprox.</th></tr></thead>
+              <tbody id="yenToEuroTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>🇪🇺 Euros → Yenes</h2>
+          <p class="muted">Orientación rápida con el cambio de referencia.</p>
+          <div class="currency-table-wrap">
+            <table class="currency-table">
+              <thead><tr><th>Euros</th><th>Yenes aprox.</th></tr></thead>
+              <tbody id="euroToYenTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="lugares" class="section">

@@ -90,3 +90,81 @@ function updateWorldClocks(){
 }
 updateWorldClocks();
 setInterval(updateWorldClocks, 1000);
+
+function initCurrency(){
+  const amount=document.getElementById("currencyAmount");
+  const from=document.getElementById("currencyFrom");
+  const result=document.getElementById("currencyResult");
+  const swap=document.getElementById("currencySwap");
+  const rateEl=document.getElementById("eurJpyRate");
+  const statusEl=document.getElementById("currencyRateStatus");
+  const yenTable=document.getElementById("yenToEuroTable");
+  const euroTable=document.getElementById("euroToYenTable");
+  if(!amount||!from||!result||!swap)return;
+
+  const FALLBACK_RATE=180.70;
+  let rate=Number(localStorage.getItem("eurJpyRate"))||FALLBACK_RATE;
+  let rateDate=localStorage.getItem("eurJpyRateDate")||"";
+  const fmtEUR=new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:2});
+  const fmtJPY=new Intl.NumberFormat("es-ES",{maximumFractionDigits:0});
+  const fmtRate=new Intl.NumberFormat("es-ES",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+  function formatDate(iso){
+    if(!iso)return "";
+    const [y,m,d]=iso.split("-");
+    return `${d}/${m}/${y}`;
+  }
+
+  function renderTables(){
+    const yenValues=[1000,5000,10000,20000,50000,100000];
+    const euroValues=[1,10,20,50,100,200,500];
+    if(yenTable) yenTable.innerHTML=yenValues.map(v=>`<tr><td>¥${fmtJPY.format(v)}</td><td>${fmtEUR.format(v/rate)}</td></tr>`).join("");
+    if(euroTable) euroTable.innerHTML=euroValues.map(v=>`<tr><td>${fmtEUR.format(v)}</td><td>¥${fmtJPY.format(v*rate)}</td></tr>`).join("");
+  }
+
+  function update(){
+    const value=Math.max(0,Number(amount.value)||0);
+    if(from.value==="JPY") result.textContent=fmtEUR.format(value/rate);
+    else result.textContent=`¥${fmtJPY.format(value*rate)}`;
+    if(rateEl) rateEl.textContent=fmtRate.format(rate);
+    renderTables();
+  }
+
+  function showStatus(source){
+    if(!statusEl)return;
+    const dateText=rateDate?`Actualizado: ${formatDate(rateDate)}.`:"";
+    statusEl.textContent=`${dateText} Tipo de referencia. El cambio real puede variar según el día, banco o tarjeta. ${source||""}`.trim();
+  }
+
+  async function loadRate(){
+    try{
+      const res=await fetch("https://api.frankfurter.dev/v2/rate/eur/jpy",{cache:"no-store"});
+      if(!res.ok) throw new Error("No se pudo obtener el cambio");
+      const data=await res.json();
+      if(typeof data.rate!=="number"||!isFinite(data.rate)||data.rate<=0) throw new Error("Tipo de cambio no válido");
+      rate=data.rate;
+      rateDate=data.date||new Date().toISOString().slice(0,10);
+      localStorage.setItem("eurJpyRate",String(rate));
+      localStorage.setItem("eurJpyRateDate",rateDate);
+      update();
+      showStatus("Fuente: Frankfurter.");
+    }catch(e){
+      update();
+      showStatus(rateDate?"Sin conexión: se muestra el último cambio guardado.":"Sin conexión: se muestra un cambio de respaldo.");
+    }
+  }
+
+  amount.addEventListener("input",update);
+  from.addEventListener("change",update);
+  swap.addEventListener("click",()=>{
+    from.value=from.value==="JPY"?"EUR":"JPY";
+    amount.value=from.value==="EUR"?5.53:1000;
+    update();
+  });
+
+  update();
+  loadRate();
+  // Comprueba de nuevo periódicamente por si la página permanece abierta varios días.
+  setInterval(loadRate,6*60*60*1000);
+}
+initCurrency();
