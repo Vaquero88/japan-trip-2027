@@ -42,12 +42,12 @@ function init(){
   function renderDetail(){const d=TRIP.days.find(x=>x[0]===selected);detail.innerHTML=`<div class="panel"><div class="eyebrow">${selected} MAYO 2027</div><h2>📍 ${d[1]}</h2><div class="event"><strong>PLAN</strong>${d[2]}</div><div class="muted" style="margin-top:12px">Este calendario es la versión inicial basada en el itinerario facilitado. Iremos modificando cada día contigo.</div></div>`}
   renderCal();renderDetail();
   document.querySelectorAll(".item-head").forEach(h=>h.onclick=()=>h.parentElement.classList.toggle("open"));
-  document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));$("#"+b.dataset.section).classList.add("active-section");document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelector(".sidebar")?.classList.remove("open")});
+  document.querySelectorAll("#nav button[data-section]").forEach(b=>b.onclick=()=>{document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));$("#"+b.dataset.section).classList.add("active-section");document.querySelectorAll("#nav button[data-section]").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelector(".sidebar")?.classList.remove("open")});
   function goToSection(sectionId){
     document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));
     const target=document.getElementById(sectionId);
     if(target) target.classList.add("active-section");
-    document.querySelectorAll("#nav button").forEach(x=>{
+    document.querySelectorAll("#nav button[data-section]").forEach(x=>{
       x.classList.toggle("active", x.dataset.section===sectionId);
     });
     document.querySelector(".sidebar")?.classList.remove("open");
@@ -82,10 +82,10 @@ function updateWorldClocks(){
   const values = {
     spainClock: fmtTime("Europe/Madrid", true).format(now),
     japanClock: fmtTime("Asia/Tokyo", true).format(now),
-    chengduClock: fmtTime("Asia/Shanghai", false).format(now),
-    beijingClock: fmtTime("Asia/Shanghai", false).format(now),
+    chinaClock: fmtTime("Asia/Shanghai", true).format(now),
     spainDate: fmtDate("Europe/Madrid").format(now),
-    japanDate: fmtDate("Asia/Tokyo").format(now)
+    japanDate: fmtDate("Asia/Tokyo").format(now),
+    chinaDate: fmtDate("Asia/Shanghai").format(now)
   };
 
   Object.entries(values).forEach(([id,value])=>{
@@ -211,3 +211,47 @@ function initCurrency(){
   setInterval(loadRate,6*60*60*1000);
 }
 initCurrency();
+
+function initHeroClock(){
+  const button = document.getElementById('heroClock');
+  if(!button) return;
+  const states = [
+    {flag:'🇪🇸', label:'ESPAÑA', city:'Madrid', tz:'Europe/Madrid'},
+    {flag:'🇯🇵', label:'JAPÓN', city:'Tokio', tz:'Asia/Tokyo'},
+    {flag:'✈️', label:'CHINA · ESCALA', city:'Chengdu · Pekín', tz:'Asia/Shanghai'}
+  ];
+  let current = 0;
+  const flag=document.getElementById('heroClockFlag');
+  const label=document.getElementById('heroClockLabel');
+  const city=document.getElementById('heroClockCity');
+  const time=document.getElementById('heroClockTime');
+  const date=document.getElementById('heroClockDate');
+  const formatTime=(tz)=>new Intl.DateTimeFormat('es-ES',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date());
+  const formatDate=(tz)=>new Intl.DateTimeFormat('es-ES',{timeZone:tz,weekday:'short',day:'2-digit',month:'short'}).format(new Date());
+  function render(){
+    const s=states[current];
+    flag.textContent=s.flag; label.textContent=s.label; city.textContent=s.city;
+    time.textContent=formatTime(s.tz); date.textContent=formatDate(s.tz);
+    button.setAttribute('aria-label',`Cambiar reloj. Ahora: ${s.label}, ${s.city}`);
+  }
+  button.addEventListener('click',()=>{ current=(current+1)%states.length; render(); });
+  render();
+  setInterval(()=>{ time.textContent=formatTime(states[current].tz); date.textContent=formatDate(states[current].tz); },1000);
+}
+initHeroClock();
+
+
+function initTheme(){
+  const button=document.getElementById('themeToggle');
+  if(!button) return;
+  const saved=localStorage.getItem('japanTripTheme');
+  const apply=(dark)=>{
+    document.body.classList.toggle('dark-mode',dark);
+    button.textContent=dark?'☀️ Modo día':'🌙 Modo noche';
+    button.setAttribute('aria-label',dark?'Cambiar a modo día':'Cambiar a modo noche');
+    localStorage.setItem('japanTripTheme',dark?'dark':'light');
+  };
+  apply(saved==='dark');
+  button.addEventListener('click',()=>apply(!document.body.classList.contains('dark-mode')));
+}
+initTheme();

@@ -23,6 +23,7 @@
       <button data-section="lugares">📍 Lugares</button>
       <button data-section="documentacion">📁 Documentación</button>
       <button data-section="notas">📝 Notas</button>
+      <button id="themeToggle" type="button" aria-label="Cambiar a modo noche">🌙 Modo noche</button>
     </nav>
   </aside>
 
@@ -39,50 +40,17 @@
           <h1>🇯🇵 Japón</h1>
           <p>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</p>
         </div>
-
-        <div class="hero-countdown countdown">
-          <span id="daysToTrip">—</span>
-          <small>días para el viaje</small>
-        </div>
-
-        <div class="world-clocks" aria-label="Horas locales del viaje">
-          <div class="main-clocks">
-            <div class="world-clock-main">
-              <div class="clock-top"><span class="clock-flag">🇪🇸</span><span>ESPAÑA</span></div>
-              <div class="clock-city">Madrid</div>
-              <div class="clock-time" id="spainClock">--:--:--</div>
-              <div class="clock-date" id="spainDate">—</div>
-            </div>
-
-            <div class="clock-main-separator">↔</div>
-
-            <div class="world-clock-main">
-              <div class="clock-top"><span class="clock-flag">🇯🇵</span><span>JAPÓN</span></div>
-              <div class="clock-city">Tokio</div>
-              <div class="clock-time" id="japanClock">--:--:--</div>
-              <div class="clock-date" id="japanDate">—</div>
-              <div class="clock-diff" id="clockDiff">—</div>
-            </div>
-          </div>
-
-          <div class="layover-clocks">
-            <div class="layover-clock">
-              <div class="layover-label">✈️ ESCALA IDA</div>
-              <div class="layover-city">Chengdu</div>
-              <div class="layover-time" id="chengduClock">--:--</div>
-              <div class="layover-zone">China</div>
-            </div>
-            <div class="layover-clock">
-              <div class="layover-label">✈️ ESCALA VUELTA</div>
-              <div class="layover-city">Pekín</div>
-              <div class="layover-time" id="beijingClock">--:--</div>
-              <div class="layover-zone">China</div>
-            </div>
-          </div>
-        </div>
+        <button class="hero-clock" id="heroClock" type="button" aria-label="Cambiar reloj de zona horaria">
+          <div class="hero-clock-top"><span class="clock-flag" id="heroClockFlag">🇪🇸</span><span id="heroClockLabel">ESPAÑA</span></div>
+          <div class="hero-clock-city" id="heroClockCity">Madrid</div>
+          <div class="hero-clock-time" id="heroClockTime">--:--:--</div>
+          <div class="hero-clock-date" id="heroClockDate">—</div>
+          <div class="hero-clock-hint">Toca para cambiar</div>
+        </button>
       </div>
+
       <div class="cards three">
-        <div class="card home-nav-card" data-target="calendario" role="button" tabindex="0" aria-label="Abrir calendario"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
+        <div class="card home-nav-card dates-card" data-target="calendario" role="button" tabindex="0" aria-label="Abrir calendario"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span><div class="card-countdown"><em>FALTAN</em><strong id="daysToTrip">—</strong><label>días para el viaje</label></div></div>
         <div class="card home-nav-card" data-target="itinerario" role="button" tabindex="0" aria-label="Abrir itinerario"><small>CIUDADES</small><b>6</b><span>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</span></div>
         <div class="card home-nav-card" data-target="vuelos" role="button" tabindex="0" aria-label="Abrir vuelos"><small>VUELOS</small><b>4 tramos</b><span>MAD → TFU → NRT / KIX → PEK → MAD</span></div>
       </div>

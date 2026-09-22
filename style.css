@@ -1,65 +1,48 @@
 
-:root{--bg:#f5f6f8;--panel:#fff;--text:#17202a;--muted:#68737d;--border:#dfe4e8;--accent:#d33;--accentbg:#fff0f0}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea{font:inherit}.app{min-height:100vh;display:flex}.sidebar{width:245px;background:#fff;border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:0;height:100vh}.brand{font-size:20px;font-weight:800;padding:4px 10px 22px}.brand small{display:block;font-size:11px;color:var(--muted);margin-left:30px;margin-top:2px}.sidebar nav{display:grid;gap:5px}.sidebar nav button{border:0;background:transparent;text-align:left;padding:12px;border-radius:10px;color:var(--text);cursor:pointer}.sidebar nav button:hover,.sidebar nav button.active{background:var(--accentbg);color:var(--accent)}.main{width:min(1100px,100%);padding:32px;margin:auto}.section{display:none}.section.active-section{display:block}.mobile-header{display:none}.eyebrow{font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:700}.section-title h1{margin:6px 0 22px;font-size:32px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:28px;border-radius:22px;background:#fff;border:1px solid var(--border);margin-bottom:18px}.hero-fuji{position:relative;min-height:330px;overflow:hidden;background-image:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.18)),url("portada-hakone.jpg");background-size:cover;background-position:center 56%}.hero-overlay{position:relative;z-index:1;color:#fff}.hero-fuji .eyebrow{color:rgba(255,255,255,.82)}.hero-fuji p{color:rgba(255,255,255,.92)}.hero h1{font-size:42px;margin:7px 0}.hero p{color:var(--muted);margin:0}.countdown{min-width:140px;text-align:center}.countdown span{display:block;font-size:34px;font-weight:800}.countdown small{color:var(--muted)}.cards{display:grid;gap:14px;margin-bottom:18px}.cards.four{grid-template-columns:repeat(4,1fr)}.cards.three{grid-template-columns:repeat(3,1fr)}.card,.panel,.empty{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px}.card small{display:block;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em}.card b{display:block;font-size:21px;margin:7px 0}.card span{color:var(--muted);font-size:13px}.timeline{display:grid;gap:0}.timeline div{padding:14px 8px;border-bottom:1px solid var(--border);display:flex;gap:25px}.timeline div:last-child{border-bottom:0}.timeline strong{min-width:150px}.stack{display:grid;gap:13px}.flight-group{display:grid;gap:13px;margin-bottom:28px}.flight-group:last-child{margin-bottom:0}.flight-group-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding:18px;background:#fff;border:1px solid var(--border);border-radius:16px}.flight-group-head h2{margin:5px 0 0;font-size:23px}.flight-summary{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.flight-summary span{font-size:12px;padding:7px 10px;border-radius:999px;background:var(--accentbg);color:var(--accent);font-weight:700}.item{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}.item-head{padding:18px;cursor:pointer}.item-body{display:none;padding:18px;border-top:1px solid var(--border)}.item.open .item-body{display:block}.item h3{margin:4px 0 7px}.muted{color:var(--muted);font-size:13px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.chip{font-size:12px;padding:5px 9px;border-radius:999px;background:var(--accentbg)}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.info{border:1px solid var(--border);border-radius:10px;padding:11px}.info small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.info b{display:block;margin-top:4px}.btn{display:inline-block;text-decoration:none;color:var(--text);border:1px solid var(--border);border-radius:9px;padding:9px 12px;background:#fff}.btn.primary{background:var(--accentbg);color:var(--accent);border-color:transparent}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:16px}.calday{min-height:84px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;text-align:left}.calday.selected{outline:2px solid var(--accent);background:var(--accentbg)}.calday b{font-size:16px}.calday span{display:block;color:var(--muted);font-size:11px;margin-top:7px}.event{padding:12px 0;border-bottom:1px solid var(--border)}.event:last-child{border-bottom:0}.event strong{display:inline-block;min-width:55px}.warning{padding:12px;border-left:3px solid var(--accent);background:var(--accentbg);border-radius:8px;font-size:13px}textarea{width:100%;min-height:300px;border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff;resize:vertical}.empty{color:var(--muted);padding:30px}.mobile-header button{border:0;background:transparent;font-size:22px;cursor:pointer}
+:root{--bg:#f5f6f8;--panel:#fff;--text:#17202a;--muted:#68737d;--border:#dfe4e8;--accent:#d33;--accentbg:#fff0f0;--sidebar:#fff;--input:#fff}
+body.dark-mode{--bg:#11161c;--panel:#1a2129;--text:#edf2f7;--muted:#9ba7b4;--border:#303b47;--accent:#ff6b6b;--accentbg:#2a1f21;--sidebar:#171d24;--input:#202831}
+body{transition:background-color .2s ease,color .2s ease}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea{font:inherit}.app{min-height:100vh;display:flex}.sidebar{width:245px;background:var(--sidebar);border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:0;height:100vh}.brand{font-size:20px;font-weight:800;padding:4px 10px 22px}.brand small{display:block;font-size:11px;color:var(--muted);margin-left:30px;margin-top:2px}.sidebar nav{display:grid;gap:5px}.sidebar nav button{border:0;background:transparent;text-align:left;padding:12px;border-radius:10px;color:var(--text);cursor:pointer}.sidebar nav button:hover,.sidebar nav button.active{background:var(--accentbg);color:var(--accent)}.main{width:min(1100px,100%);padding:32px;margin:auto}.section{display:none}.section.active-section{display:block}.mobile-header{display:none}.eyebrow{font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:700}.section-title h1{margin:6px 0 22px;font-size:32px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:28px;border-radius:22px;background:#fff;border:1px solid var(--border);margin-bottom:18px}.hero-fuji{position:relative;min-height:330px;overflow:hidden;background-image:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.18)),url("portada-hakone.jpg");background-size:cover;background-position:center 56%}.hero-overlay{position:relative;z-index:1;color:#fff}.hero-fuji .eyebrow{color:rgba(255,255,255,.82)}.hero-fuji p{color:rgba(255,255,255,.92)}.hero h1{font-size:42px;margin:7px 0}.hero p{color:var(--muted);margin:0}.countdown{min-width:140px;text-align:center}.countdown span{display:block;font-size:34px;font-weight:800}.countdown small{color:var(--muted)}.cards{display:grid;gap:14px;margin-bottom:18px}.cards.four{grid-template-columns:repeat(4,1fr)}.cards.three{grid-template-columns:repeat(3,1fr)}.card,.panel,.empty{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px}.card small{display:block;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em}.card b{display:block;font-size:21px;margin:7px 0}.card span{color:var(--muted);font-size:13px}.timeline{display:grid;gap:0}.timeline div{padding:14px 8px;border-bottom:1px solid var(--border);display:flex;gap:25px}.timeline div:last-child{border-bottom:0}.timeline strong{min-width:150px}.stack{display:grid;gap:13px}.flight-group{display:grid;gap:13px;margin-bottom:28px}.flight-group:last-child{margin-bottom:0}.flight-group-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding:18px;background:var(--panel);border:1px solid var(--border);border-radius:16px}.flight-group-head h2{margin:5px 0 0;font-size:23px}.flight-summary{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.flight-summary span{font-size:12px;padding:7px 10px;border-radius:999px;background:var(--accentbg);color:var(--accent);font-weight:700}.item{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden}.item-head{padding:18px;cursor:pointer}.item-body{display:none;padding:18px;border-top:1px solid var(--border)}.item.open .item-body{display:block}.item h3{margin:4px 0 7px}.muted{color:var(--muted);font-size:13px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.chip{font-size:12px;padding:5px 9px;border-radius:999px;background:var(--accentbg)}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.info{border:1px solid var(--border);border-radius:10px;padding:11px}.info small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.info b{display:block;margin-top:4px}.btn{display:inline-block;text-decoration:none;color:var(--text);border:1px solid var(--border);border-radius:9px;padding:9px 12px;background:#fff}.btn.primary{background:var(--accentbg);color:var(--accent);border-color:transparent}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:16px}.calday{min-height:84px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;text-align:left}.calday.selected{outline:2px solid var(--accent);background:var(--accentbg)}.calday b{font-size:16px}.calday span{display:block;color:var(--muted);font-size:11px;margin-top:7px}.event{padding:12px 0;border-bottom:1px solid var(--border)}.event:last-child{border-bottom:0}.event strong{display:inline-block;min-width:55px}.warning{padding:12px;border-left:3px solid var(--accent);background:var(--accentbg);border-radius:8px;font-size:13px}textarea{width:100%;min-height:300px;border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--input);resize:vertical}.empty{color:var(--muted);padding:30px}.mobile-header button{border:0;background:transparent;font-size:22px;cursor:pointer}
 @media(max-width:800px){.sidebar{position:fixed;z-index:5;left:-260px;transition:left .2s}.sidebar.open{left:0}.main{padding:18px}.mobile-header{display:flex;align-items:center;gap:12px;margin-bottom:18px}.hero{padding:20px;align-items:flex-start}.hero-fuji{min-height:300px}.flight-group-head{display:block}.flight-summary{justify-content:flex-start;margin-top:12px}.hero h1{font-size:32px}.cards.four,.cards.three{grid-template-columns:repeat(2,1fr)}.calendar{grid-template-columns:repeat(7,minmax(38px,1fr));gap:5px}.calday{min-height:65px;padding:7px}.calday span{font-size:9px}.grid2{grid-template-columns:1fr}.timeline div{display:block}.timeline strong{display:block;margin-bottom:4px}}
 @media(max-width:480px){.cards.four,.cards.three{grid-template-columns:1fr}.hero{display:block}.countdown{text-align:left;margin-top:15px}.section-title h1{font-size:27px}}
 
 .expense-examples{display:grid;gap:10px;margin-top:14px}
 .example-expense{padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
 
-/* Portada y relojes */
+/* Portada y reloj interactivo */
 .hero-fuji{position:relative;display:block;min-height:430px;overflow:hidden;padding:0;margin-bottom:18px;background-image:linear-gradient(90deg,rgba(0,0,0,.58),rgba(0,0,0,.16)),url("portada-hakone.jpg");background-size:cover;background-position:center}
 .hero-fuji::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.05);pointer-events:none}
 .hero-overlay{position:absolute;left:28px;top:28px;z-index:3;color:#fff}
 .hero-fuji .eyebrow{color:rgba(255,255,255,.86)}
 .hero-fuji h1{font-size:42px;margin:7px 0}
 .hero-fuji p{color:rgba(255,255,255,.94);margin:0}
-.hero-countdown{position:absolute;top:22px;right:22px;z-index:4;min-width:135px;padding:10px 14px;border-radius:14px;background:rgba(20,31,48,.86);color:#fff!important;border:1px solid rgba(255,255,255,.35);box-shadow:0 7px 20px rgba(0,0,0,.22);text-align:center;font-weight:800;text-shadow:none}
-.countdown span{display:block;font-size:31px;font-weight:800;line-height:1.05}
-.countdown small{color:rgba(255,255,255,.78);font-size:11px}
-.world-clocks{position:absolute;z-index:3;left:50%;bottom:24px;transform:translateX(-50%);width:min(760px,calc(100% - 40px));margin:0}
-.main-clocks{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:10px}
-.world-clock-main{width:100%;box-sizing:border-box;min-height:150px;padding:17px 20px;border:1px solid rgba(255,255,255,.38);border-radius:18px;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(0,0,0,.16);text-align:center;color:#182238}
-.clock-top{display:flex;justify-content:center;align-items:center;gap:8px;font-weight:800;letter-spacing:.08em;font-size:.85rem}
-.clock-flag{font-size:1.2rem}
-.clock-city{font-size:.78rem;opacity:.65;margin-top:3px}
-.clock-time{font-size:2rem;font-weight:800;line-height:1.15;margin-top:8px;font-variant-numeric:tabular-nums}
-.clock-date{font-size:.76rem;opacity:.62;margin-top:4px;text-transform:capitalize}
-.clock-diff{font-size:.72rem;margin-top:7px;font-weight:700;opacity:.8}
-.clock-main-separator{display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-.layover-clocks{display:flex;justify-content:center;gap:10px;margin-top:10px}
-.layover-clock{width:145px;box-sizing:border-box;padding:8px 11px;border:1px solid rgba(255,255,255,.34);border-radius:12px;background:rgba(255,255,255,.82);box-shadow:0 5px 16px rgba(0,0,0,.12);text-align:center;color:#182238}
-.layover-label{font-size:.61rem;font-weight:800;letter-spacing:.04em;opacity:.72}
-.layover-city{font-size:.77rem;font-weight:800;margin-top:2px}
-.layover-time{font-size:1.15rem;font-weight:800;line-height:1.15;margin-top:3px;font-variant-numeric:tabular-nums}
-.layover-zone{font-size:.57rem;opacity:.58;margin-top:2px}
+.hero-clock{position:absolute;right:22px;top:22px;z-index:4;width:178px;min-height:148px;padding:15px 14px;border:1px solid rgba(255,255,255,.45);border-radius:16px;background:rgba(15,23,42,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);color:#fff;text-align:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .15s ease,background .15s ease}
+.hero-clock:hover{transform:translateY(-2px);background:rgba(15,23,42,.82)}
+.hero-clock:active{transform:scale(.98)}
+.hero-clock:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero-clock-top{display:flex;justify-content:center;align-items:center;gap:7px;font-weight:800;letter-spacing:.06em;font-size:.76rem;min-height:22px}
+.hero-clock .clock-flag{font-size:1.1rem}
+.hero-clock-city{font-size:.76rem;opacity:.78;margin-top:3px}
+.hero-clock-time{font-size:1.9rem;font-weight:800;line-height:1.1;margin-top:9px;font-variant-numeric:tabular-nums}
+.hero-clock-date{font-size:.72rem;opacity:.72;margin-top:4px;text-transform:capitalize}
+.hero-clock-hint{font-size:.6rem;opacity:.55;margin-top:8px}
 @media(max-width:700px){
-  .hero-fuji{min-height:500px}
-  .hero-overlay{left:18px;top:18px;right:170px}
+  .hero-fuji{min-height:300px}
+  .hero-overlay{left:18px;top:18px;right:205px}
   .hero-fuji h1{font-size:34px}
-  .hero-countdown{top:16px;right:16px;min-width:112px;padding:8px 10px}
-  .countdown span{font-size:26px}
-  .world-clocks{width:calc(100% - 24px);bottom:14px}
-  .main-clocks{grid-template-columns:1fr 1fr;gap:8px}
-  .clock-main-separator{display:none}
-  .world-clock-main{min-height:130px;padding:13px 10px}
-  .clock-time{font-size:1.5rem}
-  .layover-clocks{gap:7px}
-  .layover-clock{width:135px}
+  .hero-clock{right:14px;top:14px;width:170px;min-height:136px;padding:13px 10px}
+  .hero-clock-top{font-size:.68rem;letter-spacing:.03em}
+  .hero-clock-time{font-size:1.55rem}
+  .hero-clock-city,.hero-clock-date{font-size:.65rem}
 }
 @media(max-width:480px){
-  .hero-fuji{min-height:535px}
-  .hero-overlay{right:16px;top:16px}
-  .hero-countdown{top:135px;right:16px}
-  .world-clocks{bottom:12px}
-  .main-clocks{gap:6px}
-  .world-clock-main{min-height:122px;padding:11px 6px}
-  .clock-top{font-size:.72rem}
-  .clock-time{font-size:1.3rem}
-  .clock-city,.clock-date,.clock-diff{font-size:.62rem}
-  .layover-clock{width:calc(50% - 4px);padding:7px 5px}
-  .layover-label{font-size:.52rem}
-  .layover-time{font-size:1rem}
+  .hero-fuji{min-height:300px}
+  .hero-overlay{left:16px;right:16px;top:16px}
+  .hero-clock{right:12px;top:12px;width:150px;min-height:124px;padding:10px 8px}
+  .hero-clock-top{font-size:.61rem}
+  .hero-clock-time{font-size:1.35rem;margin-top:6px}
+  .hero-clock-city,.hero-clock-date{font-size:.6rem}
+  .hero-clock-hint{font-size:.55rem;margin-top:6px}
 }
 
 .document-card{display:flex;align-items:center;gap:22px;padding:24px;margin-top:18px;border:1px solid var(--border);border-radius:20px;background:var(--surface);box-shadow:0 8px 26px rgba(0,0,0,.07)}
@@ -180,3 +163,21 @@
   .home-currency-head{align-items:flex-start;flex-direction:column;gap:6px;}
   .home-currency-input{grid-template-columns:1fr;}
 }
+
+
+/* V28 · Cuenta atrás integrada en FECHAS */
+.dates-card{min-height:168px;display:flex;flex-direction:column;justify-content:flex-start}
+.card-countdown{margin-top:14px;padding-top:11px;border-top:1px solid var(--border);display:grid;grid-template-columns:auto 1fr;column-gap:9px;align-items:center;text-align:left}
+.card-countdown em{font-style:normal;font-size:9px;letter-spacing:.12em;font-weight:800;color:var(--muted);grid-column:1 / -1;margin-bottom:2px}
+.card-countdown strong{font-size:25px;line-height:1;font-weight:850;color:var(--text);font-variant-numeric:tabular-nums}
+.card-countdown label{font-size:11px;color:var(--muted);line-height:1.15}
+@media(max-width:800px){.dates-card{min-height:168px}}
+@media(max-width:480px){.dates-card{min-height:0}.card-countdown{margin-top:13px}}
+
+/* Modo noche / día */
+#themeToggle{margin-top:8px;border:0;background:transparent;text-align:left;padding:12px;border-radius:10px;color:var(--text);cursor:pointer;width:100%;transition:background .2s,color .2s}
+#themeToggle:hover{background:var(--accentbg);color:var(--accent)}
+body.dark-mode .sidebar nav button:hover,body.dark-mode .sidebar nav button.active{background:var(--accentbg);color:var(--accent)}
+body.dark-mode .btn{background:var(--panel);color:var(--text)}
+body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:var(--input);color:var(--text);border-color:var(--border)}
+body.dark-mode .hero-fuji::after{background:rgba(0,0,0,.12)}
