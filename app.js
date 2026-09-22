@@ -43,6 +43,25 @@ function init(){
   renderCal();renderDetail();
   document.querySelectorAll(".item-head").forEach(h=>h.onclick=()=>h.parentElement.classList.toggle("open"));
   document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));$("#"+b.dataset.section).classList.add("active-section");document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelector(".sidebar")?.classList.remove("open")});
+  function goToSection(sectionId){
+    document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));
+    const target=document.getElementById(sectionId);
+    if(target) target.classList.add("active-section");
+    document.querySelectorAll("#nav button").forEach(x=>{
+      x.classList.toggle("active", x.dataset.section===sectionId);
+    });
+    document.querySelector(".sidebar")?.classList.remove("open");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  document.querySelectorAll(".home-nav-card").forEach(card=>{
+    card.addEventListener("click",()=>goToSection(card.dataset.target));
+    card.addEventListener("keydown",e=>{
+      if(e.key==="Enter" || e.key===" "){
+        e.preventDefault();
+        goToSection(card.dataset.target);
+      }
+    });
+  });
   $("#menuBtn").onclick=()=>$(".sidebar").classList.toggle("open");
   const notes=$("#notes");notes.value=localStorage.getItem("jp-notes")||"";notes.oninput=()=>localStorage.setItem("jp-notes",notes.value);
 }
@@ -96,11 +115,17 @@ function initCurrency(){
   const from=document.getElementById("currencyFrom");
   const result=document.getElementById("currencyResult");
   const swap=document.getElementById("currencySwap");
+
+  const homeAmount=document.getElementById("homeCurrencyAmount");
+  const homeFrom=document.getElementById("homeCurrencyFrom");
+  const homeResult=document.getElementById("homeCurrencyResult");
+  const homeSwap=document.getElementById("homeCurrencySwap");
+  const homeRateEl=document.getElementById("homeEurJpyRate");
   const rateEl=document.getElementById("eurJpyRate");
   const statusEl=document.getElementById("currencyRateStatus");
   const yenTable=document.getElementById("yenToEuroTable");
   const euroTable=document.getElementById("euroToYenTable");
-  if(!amount||!from||!result||!swap)return;
+  if((!amount||!from||!result||!swap) && (!homeAmount||!homeFrom||!homeResult||!homeSwap))return;
 
   const FALLBACK_RATE=180.70;
   let rate=Number(localStorage.getItem("eurJpyRate"))||FALLBACK_RATE;
@@ -108,6 +133,14 @@ function initCurrency(){
   const fmtEUR=new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:2});
   const fmtJPY=new Intl.NumberFormat("es-ES",{maximumFractionDigits:0});
   const fmtRate=new Intl.NumberFormat("es-ES",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+  function updateHome(){
+    if(!homeAmount||!homeFrom||!homeResult)return;
+    const value=Math.max(0,Number(homeAmount.value)||0);
+    if(homeFrom.value==="JPY") homeResult.textContent=fmtEUR.format(value/rate);
+    else homeResult.textContent=`¥${fmtJPY.format(value*rate)}`;
+    if(homeRateEl) homeRateEl.textContent=fmtRate.format(rate);
+  }
 
   function formatDate(iso){
     if(!iso)return "";
@@ -128,6 +161,7 @@ function initCurrency(){
     else result.textContent=`¥${fmtJPY.format(value*rate)}`;
     if(rateEl) rateEl.textContent=fmtRate.format(rate);
     renderTables();
+    updateHome();
   }
 
   function showStatus(source){
@@ -154,15 +188,24 @@ function initCurrency(){
     }
   }
 
-  amount.addEventListener("input",update);
-  from.addEventListener("change",update);
-  swap.addEventListener("click",()=>{
+  if(amount) amount.addEventListener("input",update);
+  if(from) from.addEventListener("change",update);
+  if(swap) swap.addEventListener("click",()=>{
     from.value=from.value==="JPY"?"EUR":"JPY";
     amount.value=from.value==="EUR"?5.53:1000;
     update();
   });
 
+  if(homeAmount) homeAmount.addEventListener("input",updateHome);
+  if(homeFrom) homeFrom.addEventListener("change",updateHome);
+  if(homeSwap) homeSwap.addEventListener("click",()=>{
+    homeFrom.value=homeFrom.value==="JPY"?"EUR":"JPY";
+    homeAmount.value=homeFrom.value==="EUR"?5.53:1000;
+    updateHome();
+  });
+
   update();
+  updateHome();
   loadRate();
   // Comprueba de nuevo periódicamente por si la página permanece abierta varios días.
   setInterval(loadRate,6*60*60*1000);

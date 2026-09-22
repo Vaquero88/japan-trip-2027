@@ -82,12 +82,37 @@
         </div>
       </div>
       <div class="cards three">
-        <div class="card"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
-        <div class="card"><small>CIUDADES</small><b>6</b><span>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</span></div>
-        <div class="card"><small>VUELOS</small><b>4 tramos</b><span>MAD → TFU → NRT / KIX → PEK → MAD</span></div>
+        <div class="card home-nav-card" data-target="calendario" role="button" tabindex="0" aria-label="Abrir calendario"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
+        <div class="card home-nav-card" data-target="itinerario" role="button" tabindex="0" aria-label="Abrir itinerario"><small>CIUDADES</small><b>6</b><span>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</span></div>
+        <div class="card home-nav-card" data-target="vuelos" role="button" tabindex="0" aria-label="Abrir vuelos"><small>VUELOS</small><b>4 tramos</b><span>MAD → TFU → NRT / KIX → PEK → MAD</span></div>
       </div>
+
+      <div class="home-currency panel">
+        <div class="home-currency-head">
+          <div>
+            <span class="eyebrow">CAMBIO RÁPIDO</span>
+            <h2>💱 Yen ↔ Euro</h2>
+          </div>
+          <span class="home-currency-rate">1 € = <b id="homeEurJpyRate">—</b> ¥</span>
+        </div>
+        <div class="home-currency-row">
+          <div class="home-currency-input">
+            <input id="homeCurrencyAmount" type="number" min="0" step="any" value="1000" inputmode="decimal" aria-label="Cantidad">
+            <select id="homeCurrencyFrom" aria-label="Moneda de origen">
+              <option value="JPY">🇯🇵 JPY</option>
+              <option value="EUR">🇪🇺 EUR</option>
+            </select>
+          </div>
+          <button id="homeCurrencySwap" class="currency-swap" type="button" aria-label="Cambiar monedas">↕</button>
+          <div class="home-currency-result">
+            <span>RESULTADO</span>
+            <strong id="homeCurrencyResult">—</strong>
+          </div>
+        </div>
+      </div>
+
       <div class="panel">
-        <h2>Próximos momentos</h2>
+        <h2>Próximos eventos</h2>
         <div class="timeline">
           <div><strong>18 mayo · 15:10</strong><span>✈️ Llegada a Tokio · Narita</span></div>
           <div><strong>23 mayo · 15:00</strong><span>🏨 Check-in Fukuzumiro · Hakone</span></div>
@@ -96,6 +121,7 @@
           <div><strong>31 mayo · 09:05</strong><span>✈️ Osaka → Pekín → Madrid</span></div>
         </div>
       </div>
+      <img class="viajeros-sticker-only" src="viajeros.jpg" alt="Foto de los viajeros">
     </section>
 
     <section id="vuelos" class="section">
