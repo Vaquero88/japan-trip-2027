@@ -50,7 +50,7 @@
 @media(max-width:480px){
   .hero-fuji{min-height:535px}
   .hero-overlay{right:16px;top:16px}
-  .hero-countdown{top:90px;right:16px}
+  .hero-countdown{top:135px;right:16px}
   .world-clocks{bottom:12px}
   .main-clocks{gap:6px}
   .world-clock-main{min-height:122px;padding:11px 6px}
