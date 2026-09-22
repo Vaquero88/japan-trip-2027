@@ -20,6 +20,7 @@
       <button data-section="reservas">🎟️ Reservas</button>
       <button data-section="gastos">💴 Gastos</button>
       <button data-section="lugares">📍 Lugares</button>
+      <button data-section="documentacion">📁 Documentación</button>
       <button data-section="notas">📝 Notas</button>
     </nav>
   </aside>
@@ -32,25 +33,52 @@
 
     <section id="inicio" class="section active-section">
       <div class="hero hero-fuji">
-<div class="world-clocks" aria-label="Hora local en España y Japón">
-  <div class="world-clock">
-    <div class="clock-top"><span class="clock-flag">🇪🇸</span><span>ESPAÑA</span></div>
-    <div class="clock-city">Madrid</div>
-    <div class="clock-time" id="spainClock">--:--:--</div>
-    <div class="clock-date" id="spainDate">—</div>
-  </div>
-  <div class="clock-separator">↔</div>
-  <div class="world-clock">
-    <div class="clock-top"><span class="clock-flag">🇯🇵</span><span>JAPÓN</span></div>
-    <div class="clock-city">Tokio</div>
-    <div class="clock-time" id="japanClock">--:--:--</div>
-    <div class="clock-date" id="japanDate">—</div>
-    <div class="clock-diff" id="clockDiff">+7 h respecto a España</div>
-  </div>
-</div>
+        <div class="hero-overlay">
+          <span class="eyebrow">VIAJE · MAYO 2027</span>
+          <h1>🇯🇵 Japón</h1>
+          <p>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</p>
+        </div>
 
-        <div class="hero-overlay"><span class="eyebrow">VIAJE · MAYO 2027</span><h1>🇯🇵 Japón</h1><p>Tokio · Nikko · Hakone · Kioto · Nara · Osaka</p></div>
-        <div class="countdown"><span id="daysToTrip">—</span><small>días para el viaje</small></div>
+        <div class="hero-countdown countdown">
+          <span id="daysToTrip">—</span>
+          <small>días para el viaje</small>
+        </div>
+
+        <div class="world-clocks" aria-label="Horas locales del viaje">
+          <div class="main-clocks">
+            <div class="world-clock-main">
+              <div class="clock-top"><span class="clock-flag">🇪🇸</span><span>ESPAÑA</span></div>
+              <div class="clock-city">Madrid</div>
+              <div class="clock-time" id="spainClock">--:--:--</div>
+              <div class="clock-date" id="spainDate">—</div>
+            </div>
+
+            <div class="clock-main-separator">↔</div>
+
+            <div class="world-clock-main">
+              <div class="clock-top"><span class="clock-flag">🇯🇵</span><span>JAPÓN</span></div>
+              <div class="clock-city">Tokio</div>
+              <div class="clock-time" id="japanClock">--:--:--</div>
+              <div class="clock-date" id="japanDate">—</div>
+              <div class="clock-diff" id="clockDiff">—</div>
+            </div>
+          </div>
+
+          <div class="layover-clocks">
+            <div class="layover-clock">
+              <div class="layover-label">✈️ ESCALA IDA</div>
+              <div class="layover-city">Chengdu</div>
+              <div class="layover-time" id="chengduClock">--:--</div>
+              <div class="layover-zone">China</div>
+            </div>
+            <div class="layover-clock">
+              <div class="layover-label">✈️ ESCALA VUELTA</div>
+              <div class="layover-city">Pekín</div>
+              <div class="layover-time" id="beijingClock">--:--</div>
+              <div class="layover-zone">China</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="cards three">
         <div class="card"><small>FECHAS</small><b>18 — 31 mayo</b><span>14 días</span></div>
@@ -147,7 +175,32 @@
       <div class="empty">Podremos guardar lugares con enlace directo a Google Maps.</div>
     </section>
 
-    <section id="notas" class="section">
+    
+    <section id="documentacion" class="section">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">DOCUMENTACIÓN DEL VIAJE</span>
+          <h1>📁 Documentación</h1>
+        </div>
+      </div>
+
+      <div class="document-card">
+        <div class="document-icon">🛂</div>
+        <div class="document-content">
+          <span class="eyebrow">4 VIAJEROS</span>
+          <h2>Pasaportes</h2>
+          <p>Acceso a la carpeta privada de Google Drive con los pasaportes de los cuatro viajeros.</p>
+          <a class="document-button" href="https://drive.google.com/drive/folders/1MotpVbM6-KJ_663hzfIn2CEQV1eAJcw7" target="_blank" rel="noopener noreferrer">
+            📂 Abrir carpeta de pasaportes ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="panel documentation-note">
+        <p>🔐 Los documentos permanecen en Google Drive y su acceso se gestiona mediante los permisos de Drive.</p>
+      </div>
+    </section>
+<section id="notas" class="section">
       <div class="section-title"><div><span class="eyebrow">APUNTES</span><h1>📝 Notas</h1></div></div>
       <textarea id="notes" placeholder="Escribe aquí notas del viaje..."></textarea>
     </section>

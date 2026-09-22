@@ -49,42 +49,43 @@ function init(){
 init();
 
 
+
 function updateWorldClocks(){
-  const fmtTime = (tz) => new Intl.DateTimeFormat("es-ES", {
-    timeZone: tz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+  const fmtTime = (tz, withSeconds=true) => new Intl.DateTimeFormat("es-ES", {
+    timeZone: tz, hour: "2-digit", minute: "2-digit",
+    ...(withSeconds ? {second:"2-digit"} : {}), hour12: false
   });
   const fmtDate = (tz) => new Intl.DateTimeFormat("es-ES", {
     timeZone: tz, weekday: "short", day: "2-digit", month: "short"
   });
   const now = new Date();
-  const spain = fmtTime("Europe/Madrid").format(now);
-  const japan = fmtTime("Asia/Tokyo").format(now);
-  const spainDate = fmtDate("Europe/Madrid").format(now);
-  const japanDate = fmtDate("Asia/Tokyo").format(now);
-  const a = document.getElementById("spainClock");
-  const b = document.getElementById("japanClock");
-  const c = document.getElementById("spainDate");
-  const d = document.getElementById("japanDate");
-  if(a) a.textContent = spain;
-  if(b) b.textContent = japan;
-  if(c) c.textContent = spainDate;
-  if(d) d.textContent = japanDate;
+
+  const values = {
+    spainClock: fmtTime("Europe/Madrid", true).format(now),
+    japanClock: fmtTime("Asia/Tokyo", true).format(now),
+    chengduClock: fmtTime("Asia/Shanghai", false).format(now),
+    beijingClock: fmtTime("Asia/Shanghai", false).format(now),
+    spainDate: fmtDate("Europe/Madrid").format(now),
+    japanDate: fmtDate("Asia/Tokyo").format(now)
+  };
+
+  Object.entries(values).forEach(([id,value])=>{
+    const el=document.getElementById(id);
+    if(el) el.textContent=value;
+  });
+
   const diff = document.getElementById("clockDiff");
   if(diff){
-    const parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Europe/Madrid", timeZoneName: "longOffset"
-    }).formatToParts(now);
-    const partsJ = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Asia/Tokyo", timeZoneName: "longOffset"
-    }).formatToParts(now);
+    const parts = new Intl.DateTimeFormat("en-US", {timeZone:"Europe/Madrid", timeZoneName:"longOffset"}).formatToParts(now);
+    const partsJ = new Intl.DateTimeFormat("en-US", {timeZone:"Asia/Tokyo", timeZoneName:"longOffset"}).formatToParts(now);
     const getOffset = p => {
-      const v = p.find(x => x.type === "timeZoneName")?.value || "";
-      const m = v.match(/GMT([+-])(\d{2}):?(\d{2})?/);
+      const v=p.find(x=>x.type==="timeZoneName")?.value||"";
+      const m=v.match(/GMT([+-])(\d{2}):?(\d{2})?/);
       if(!m) return null;
-      return (m[1] === "+" ? 1 : -1) * (parseInt(m[2],10) + (parseInt(m[3]||"0",10)/60));
+      return (m[1]==="+"?1:-1)*(parseInt(m[2],10)+(parseInt(m[3]||"0",10)/60));
     };
-    const diffHours = (getOffset(partsJ) ?? 9) - (getOffset(parts) ?? 1);
-    diff.textContent = `${diffHours >= 0 ? "+" : ""}${diffHours} h respecto a España`;
+    const d=(getOffset(partsJ)??9)-(getOffset(parts)??1);
+    diff.textContent=`${d>=0?"+":""}${d} h respecto a España`;
   }
 }
 updateWorldClocks();
