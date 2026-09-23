@@ -13,17 +13,17 @@
     <nav id="nav">
       <button data-section="inicio" class="active">🏠 Inicio</button>
       <button data-section="vuelos">✈️ Vuelos</button>
+      <button data-section="alojamientos">🏨 Alojamientos</button>
       <button data-section="calendario">📅 Calendario</button>
       <button data-section="itinerario">🗺️ Itinerario</button>
-      <button data-section="alojamientos">🏨 Alojamientos</button>
       <button data-section="transportes">🚆 Transportes</button>
       <button data-section="reservas">🎟️ Reservas</button>
       <button data-section="gastos">💴 Gastos</button>
-      <button data-section="moneda">💱 Moneda</button>
+      <button data-section="moneda">💱 Monedas</button>
       <button data-section="lugares">📍 Lugares</button>
       <button data-section="maleta">🧳 Maleta</button>
-      <button data-section="documentacion">📁 Documentación</button>
       <button data-section="notas">📝 Notas</button>
+      <button data-section="documentacion">📁 Documentación</button>
       <button id="themeToggle" type="button" aria-label="Cambiar a modo noche">🌙 Modo noche</button>
       <button id="closeMenuBtn" type="button" class="mobile-close-menu">✕ Esconder menú</button>
     </nav>
@@ -117,7 +117,7 @@
 
     <section id="transportes" class="section">
       <div class="section-title"><div><span class="eyebrow">CÓMO MOVERSE</span><h1>🚆 Transportes</h1></div></div>
-      <div class="empty">Esta sección está preparada para añadir las rutas del PDF y las opciones que vayamos confirmando.</div>
+      <div id="transportList" class="transport-days"></div>
     </section>
 
     <section id="reservas" class="section">
