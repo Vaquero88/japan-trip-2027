@@ -215,3 +215,13 @@ body.dark-mode #menuBtn{color:#fff;background:#202831;border-color:#46515d}
   .mobile-close-menu:hover{background:var(--accentbg);color:var(--accent)}
   .packing-grid{grid-template-columns:1fr}
 }
+
+
+/* V36 · Settle Up centrado en Gastos */
+.settleup-center{display:flex;justify-content:center;align-items:center;margin:22px 0 24px;}
+.settleup-square{width:150px;min-height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.07);transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease;}
+.settleup-square:hover{transform:translateY(-2px);background:var(--accentbg);border-color:var(--accent);box-shadow:0 7px 18px rgba(0,0,0,.10);}
+.settleup-icon{font-size:28px;line-height:1.1;}
+.settleup-square strong{font-size:15px;line-height:1.1;}
+.settleup-square small{font-size:10px;color:var(--muted);font-weight:700;text-align:center;}
+@media(max-width:480px){.settleup-center{margin:18px 0 22px}.settleup-square{width:138px;min-height:108px;border-radius:14px}}
