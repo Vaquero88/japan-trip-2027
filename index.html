@@ -21,9 +21,11 @@
       <button data-section="gastos">💴 Gastos</button>
       <button data-section="moneda">💱 Moneda</button>
       <button data-section="lugares">📍 Lugares</button>
+      <button data-section="maleta">🧳 Maleta</button>
       <button data-section="documentacion">📁 Documentación</button>
       <button data-section="notas">📝 Notas</button>
       <button id="themeToggle" type="button" aria-label="Cambiar a modo noche">🌙 Modo noche</button>
+      <button id="closeMenuBtn" type="button" class="mobile-close-menu">✕ Esconder menú</button>
     </nav>
   </aside>
 
@@ -230,6 +232,18 @@
     </section>
 
     
+    <section id="maleta" class="section">
+      <div class="section-title"><div><span class="eyebrow">CHECKLIST DEL VIAJE</span><h1>🧳 Maleta</h1></div></div>
+      <div class="panel packing-intro">
+        <p><strong>Preparad la maleta poco a poco.</strong> Marcad cada cosa cuando la tengáis lista y la aplicación guardará automáticamente vuestro progreso.</p>
+        <div class="packing-progress">
+          <div class="packing-progress-head"><strong id="packingProgressText">0 / 0 preparados</strong><span id="packingProgressPct">0%</span></div>
+          <div class="packing-progress-bar"><span id="packingProgressBar"></span></div>
+        </div>
+      </div>
+      <div id="packingList" class="packing-grid"></div>
+    </section>
+
     <section id="documentacion" class="section">
       <div class="section-title">
         <div>
