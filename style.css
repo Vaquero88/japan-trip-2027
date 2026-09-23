@@ -17,7 +17,7 @@ body{transition:background-color .2s ease,color .2s ease}
 .itinerary-day-chevron{width:34px;height:34px;min-width:34px;border-radius:50%;display:grid;place-items:center;background:var(--panel);border:1px solid var(--border);font-size:22px;line-height:1;transition:transform .2s ease}
 .itinerary-day.open .itinerary-day-head{border-bottom-color:var(--border)}
 .itinerary-day.open .itinerary-day-chevron{transform:rotate(180deg)}
-.itinerary-day .item-body{background:#fff;color:#1f2937;border-top:1px solid var(--border)}
+.itinerary-day .item-body{background:var(--panel);color:var(--text);border-top:1px solid var(--border)}
 
 @media(max-width:480px){.cards.four,.cards.three{grid-template-columns:1fr}.hero{display:block}.countdown{text-align:left;margin-top:15px}.section-title h1{font-size:27px}
   /* En móvil vertical, el título y las ciudades bajan al borde inferior de la foto para no quedar ocultos por el reloj. */
