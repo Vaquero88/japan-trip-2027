@@ -412,3 +412,18 @@ body.dark-mode #menuBtn{color:#fff;background:#202831;border-color:#46515d}
 .qr-pending:hover{transform:none;box-shadow:0 5px 16px rgba(0,0,0,.06);border-color:var(--border)}
 @media(max-width:700px){.qr-travellers-grid{grid-template-columns:repeat(2,minmax(110px,1fr))}}
 @media(max-width:420px){.qr-travellers-grid{grid-template-columns:repeat(2,1fr);gap:10px}.qr-traveller-card{min-height:105px}}
+
+/* V60: visual cards for flights, stays and calendar */
+.flight-group-head{cursor:pointer;position:relative}
+.flight-group-head::after{content:"＋";font-size:24px;color:var(--accent);margin-left:auto;align-self:center;transition:transform .2s}
+.flight-group.open .flight-group-head::after{content:"−"}
+.flight-group>.stack{display:none}
+.flight-group.open>.stack{display:grid}
+.stay-card{overflow:hidden}
+.stay-visual{height:180px;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--accentbg)}.stay-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.stay-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.68));pointer-events:none}.stay-visual-label{position:relative;z-index:2;color:#fff;font-size:22px;font-weight:800;padding:16px;text-shadow:0 2px 8px rgba(0,0,0,.55)}
+.stay-visual-label{color:#fff;font-size:22px;font-weight:800;padding:16px;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+.stay-card .item-head{padding-top:16px}
+.calendar .calday{position:relative;background-size:cover;background-position:center;color:#fff;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.calendar .calday b,.calendar .calday span{position:relative;color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.65)}
+.calendar .calday.selected{outline:2px solid var(--accent);outline-offset:1px}
+@media(max-width:800px){.stay-visual{height:145px}.flight-group-head{padding:15px}.flight-group-head::after{float:right}.calendar .calday{min-height:72px}}

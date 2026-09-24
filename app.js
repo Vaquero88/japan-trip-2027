@@ -19,7 +19,15 @@ function cardExpense(e){
     </div>
   </article>`;
 }
-function cardStay(s){return `<article class="item"><div class="item-head"><div class="muted">${s.city} · ${s.dates}</div><h3>🏨 ${s.name}</h3><div class="muted">${s.address}</div><div class="chips"><span class="chip">🛏️ ${s.nights}</span><span class="chip">💶 ${s.price}</span></div></div><div class="item-body"><div class="grid2"><div class="info"><small>Entrada</small><b>${s.checkin}</b></div><div class="info"><small>Salida</small><b>${s.checkout}</b></div><div class="info"><small>Anfitrión / alojamiento</small><b>${s.host}</b></div><div class="info"><small>Dirección</small><b>${s.address}</b></div></div><p class="muted" style="margin-top:14px">${s.notes}</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><a class="btn primary" href="${s.map}" target="_blank" rel="noopener">📍 Google Maps</a><a class="btn" href="${s.link}" target="_blank" rel="noopener">🏠 Ver anuncio</a></div></div></article>`}
+const CITY_IMAGES={
+  "Tokio":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tokyo%20Skyline.jpg",
+  "Hakone":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Fukuzumi%20Ryokan%20Besso%20Ishigura.jpg",
+  "Kioto":"https://commons.wikimedia.org/wiki/Special:Redirect/file/GIO%20-%20Traditional%20street%20with%20pedestrians%20in%20Gion,%20Kyoto,%20Japan,%202015.jpg",
+  "Osaka":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dotonbori%20at%20night.JPG",
+  "Nikko":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nikko%20toshogu%20torii%20and%20yomeimon%20gate.jpg",
+  "Nara":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nara%20deer%20lounging%20at%20Todaiji.jpg"
+};
+function cardStay(s){const img=CITY_IMAGES[s.city]||CITY_IMAGES.Tokio;return `<article class="item stay-card"><div class="stay-visual"><img src="${img}" alt="${s.city}" loading="lazy" referrerpolicy="no-referrer"><div class="stay-visual-overlay"></div><div class="stay-visual-label">${s.city}</div></div><div class="item-head"><div class="muted">${s.city} · ${s.dates}</div><h3>🏨 ${s.name}</h3><div class="muted">${s.address}</div><div class="chips"><span class="chip">🛏️ ${s.nights}</span><span class="chip">💶 ${s.price}</span></div></div><div class="item-body"><div class="grid2"><div class="info"><small>Entrada</small><b>${s.checkin}</b></div><div class="info"><small>Salida</small><b>${s.checkout}</b></div><div class="info"><small>Anfitrión / alojamiento</small><b>${s.host}</b></div><div class="info"><small>Dirección</small><b>${s.address}</b></div></div><p class="muted" style="margin-top:14px">${s.notes}</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><a class="btn primary" href="${s.map}" target="_blank" rel="noopener">📍 Google Maps</a><a class="btn" href="${s.link}" target="_blank" rel="noopener">🏠 Ver anuncio</a></div></div></article>`}
 function init(){
   const tripDate=new Date("2027-05-18T00:00:00"), now=new Date(), diff=Math.ceil((tripDate-now)/86400000); $("#daysToTrip").textContent=Math.max(0,diff);
   $("#flightList").innerHTML = Object.values(TRIP.flightGroups).map(group => {
@@ -286,9 +294,17 @@ function init(){
     head.setAttribute("aria-expanded","false");
   });
   const grid=$("#calendar"), detail=$("#calendarDetail"); let selected="18";
-  function renderCal(){grid.innerHTML="";TRIP.days.forEach(d=>{const b=document.createElement("button");b.className="calday"+(d[0]===selected?" selected":"");b.innerHTML=`<b>${d[0]}</b><span>${d[1]}</span>`;b.onclick=()=>{selected=d[0];renderCal();renderDetail()};grid.appendChild(b)})}
+  function renderCal(){grid.innerHTML="";TRIP.days.forEach(d=>{const b=document.createElement("button");const city=d[1].split(" → ")[0];b.className="calday"+(d[0]===selected?" selected":"");b.style.backgroundImage=`linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.64)),url("${CITY_IMAGES[city]||CITY_IMAGES.Tokio}")`;b.innerHTML=`<b>${d[0]}</b><span>${d[1]}</span>`;b.onclick=()=>{selected=d[0];renderCal();renderDetail()};grid.appendChild(b)})}
   function renderDetail(){const d=TRIP.days.find(x=>x[0]===selected);detail.innerHTML=`<div class="panel"><div class="eyebrow">${selected} MAYO 2027</div><h2>📍 ${d[1]}</h2><div class="event"><strong>PLAN</strong>${d[2]}</div><div class="muted" style="margin-top:12px">Este calendario es la versión inicial basada en el itinerario facilitado. Iremos modificando cada día contigo.</div></div>`}
   renderCal();renderDetail();
+  document.querySelectorAll(".flight-group-head").forEach(head=>{
+    head.setAttribute("role","button");
+    head.setAttribute("tabindex","0");
+    head.setAttribute("aria-expanded","false");
+    const toggle=()=>{const group=head.parentElement;const open=group.classList.toggle("open");head.setAttribute("aria-expanded",String(open));};
+    head.onclick=toggle;
+    head.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}};
+  });
   document.querySelectorAll(".item-head:not(.itinerary-day-head)").forEach(h=>h.onclick=()=>h.parentElement.classList.toggle("open"));
   document.querySelectorAll("#nav button[data-section]").forEach(b=>b.onclick=()=>{document.querySelectorAll(".section").forEach(s=>s.classList.remove("active-section"));$("#"+b.dataset.section).classList.add("active-section");document.querySelectorAll("#nav button[data-section]").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelector(".sidebar")?.classList.remove("open")});
   function goToSection(sectionId){
