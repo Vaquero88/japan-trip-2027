@@ -311,3 +311,91 @@ body.dark-mode #menuBtn{color:#fff;background:#202831;border-color:#46515d}
 .itinerary-day .item-body{display:none}
 .itinerary-day.open .item-body{display:block}
 .itinerary-day.open .itinerary-day-chevron{transform:rotate(180deg)}
+
+/* Mapas visuales de ruta del itinerario */
+.itinerary-map{margin-top:22px;padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--panel);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.itinerary-map-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.itinerary-map-head h4{margin:2px 0 0;font-size:15px}
+.itinerary-map-canvas{overflow:hidden;border-radius:14px;border:1px solid var(--border);background:var(--accentbg)}
+.itinerary-map-canvas svg{display:block;width:100%;height:auto;min-height:220px}
+.map-bg{fill:var(--accentbg)}
+.map-grid{fill:none;stroke:var(--border);stroke-width:1;opacity:.65}
+.map-route{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-dasharray:9 7;color:var(--accent)}
+.map-marker circle{fill:var(--panel);stroke:var(--accent);stroke-width:2.5}
+.map-marker text{font-family:Arial,"Noto Sans",sans-serif}
+.map-label{font-size:13px;font-weight:800;fill:var(--text)}
+.map-step{font-size:9px;font-weight:800;fill:var(--muted)}
+.itinerary-map-legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:12px;font-size:11px;color:var(--muted)}
+.itinerary-map-legend span{display:inline-flex;align-items:center;gap:4px}
+.itinerary-map-legend b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px}
+@media(max-width:700px){.itinerary-map{padding:12px}.itinerary-map-canvas svg{min-height:190px}.map-label{font-size:11px}.itinerary-map-head{align-items:flex-start}}
+/* Interactive street maps for itinerary */
+.itinerary-map-canvas.leaflet-map{height:360px;width:100%;min-height:360px;background:var(--accentbg);z-index:1}
+.itinerary-leaflet-marker{position:relative;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 3px 10px rgba(0,0,0,.25);display:grid;place-items:center;font-size:20px}
+.itinerary-leaflet-marker b{position:absolute;right:-7px;top:-7px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:10px}
+.itinerary-map-note{margin-top:8px;font-size:11px;color:var(--muted)}
+[data-theme="dark"] .itinerary-leaflet-marker{background:#20252d;border-color:#a78bfa}
+@media(max-width:700px){.itinerary-map-canvas.leaflet-map{height:300px;min-height:300px}}
+/* Static map screenshots for itinerary */
+.itinerary-map-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.itinerary-map-shot{margin:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--panel);box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.itinerary-map-shot img{display:block;width:100%;height:300px;object-fit:cover;cursor:zoom-in;background:var(--accentbg);transition:transform .2s ease}
+.itinerary-map-shot img:hover{transform:scale(1.015)}
+.itinerary-map-shot figcaption{padding:10px 12px;display:flex;flex-direction:column;gap:3px;font-size:11px;line-height:1.35}
+.itinerary-map-shot figcaption b{font-size:12px;color:var(--text)}
+.itinerary-map-shot figcaption span{color:var(--muted)}
+[data-theme="dark"] .itinerary-map-shot{box-shadow:none}
+@media(max-width:700px){.itinerary-map-gallery{grid-template-columns:1fr}.itinerary-map-shot img{height:250px}}
+.itinerary-routes{margin-top:22px;padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.itinerary-routes-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.itinerary-routes-head h4{margin:2px 0 0;font-size:15px}
+.itinerary-route-list{display:grid;gap:9px}
+.itinerary-route-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--accentbg);color:var(--text);text-decoration:none;font-weight:700;font-size:13px;transition:transform .15s ease,filter .15s ease}
+.itinerary-route-btn:hover{filter:brightness(.98);transform:translateY(-1px)}
+.itinerary-route-btn span{font-size:16px}
+.itinerary-route-note{margin-top:9px;font-size:11px;color:var(--muted);line-height:1.45}
+[data-theme="dark"] .itinerary-route-btn{background:var(--accentbg);color:var(--text)}
+@media(max-width:700px){.itinerary-routes{padding:12px}.itinerary-routes-head{align-items:flex-start}.itinerary-route-btn{font-size:12px;padding:11px 12px}}
+
+/* V54 · Transporte: recorrido visual + tarjetas por trayecto */
+.transport-route{background:var(--accentbg);border:1px solid var(--border);border-radius:16px;padding:14px 16px;margin-bottom:14px}
+.transport-route-label{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+.transport-route-flow{display:flex;align-items:center;gap:8px;overflow-x:auto;padding-bottom:3px;scrollbar-width:thin}
+.transport-route-node{display:flex;align-items:center;gap:6px;white-space:nowrap;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:8px 10px;font-size:12px;color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.transport-route-node b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px}
+.transport-route-arrow{font-size:18px;color:var(--accent);font-weight:900;flex:none}
+.transport-steps{display:grid;gap:10px}
+.transport-step{overflow:hidden;border:1px solid var(--border);border-radius:15px;background:var(--panel);box-shadow:0 2px 7px rgba(0,0,0,.035)}
+.transport-step-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;background:var(--panel);color:var(--text);text-align:left;padding:14px 15px;cursor:pointer}
+.transport-step-left{display:flex;align-items:center;gap:10px;min-width:0}
+.transport-step-number{width:27px;height:27px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900;flex:none}
+.transport-step-title{min-width:0}.transport-step-title h3{margin:3px 0;font-size:15px}.transport-step-title .muted{font-size:12px}
+.transport-step-right{display:flex;align-items:center;gap:8px;flex:none}.transport-key{font-size:11px;font-weight:800;color:var(--accent);background:var(--accentbg);border-radius:999px;padding:6px 8px;white-space:nowrap}.transport-step-chevron{width:29px;height:29px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;font-size:18px;transition:transform .2s}
+.transport-step-body{display:none;border-top:1px solid var(--border);padding:15px;background:var(--bg)}
+.transport-step.open .transport-step-body{display:block}.transport-step.open .transport-step-chevron{transform:rotate(180deg)}
+@media(max-width:700px){.transport-route-flow{align-items:stretch}.transport-step-right .transport-key{display:none}.transport-step-head{padding:13px 12px}.transport-step-title h3{font-size:14px}.transport-step-number{width:25px;height:25px}.transport-icon{width:36px;height:36px;font-size:18px}}
+.transport-head-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:420px}.transport-head-badges span{font-size:10px;font-weight:800;color:var(--accent);background:var(--accentbg);border:1px solid var(--border);border-radius:999px;padding:5px 7px;white-space:nowrap}.transport-step-right{min-width:0}.transport-step-body{background:var(--panel)}
+@media(max-width:700px){.transport-head-badges{display:none}.transport-step-right{margin-left:auto}}
+
+/* V56 · Transportes: selector de trayectos + detalle lateral */
+.transport-workspace{display:grid;grid-template-columns:minmax(300px,38%) minmax(0,1fr);gap:14px;align-items:stretch}
+.transport-choice-panel,.transport-detail-panel{border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:14px}
+.transport-choice-label{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--accent);margin:2px 2px 12px}
+.transport-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.transport-choice{position:relative;min-height:112px;border:1px solid var(--border);border-radius:14px;background:var(--bg);color:var(--text);padding:12px 8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;cursor:pointer;transition:.15s ease;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.transport-choice:hover{transform:translateY(-2px);border-color:var(--accent)}
+.transport-choice.selected{background:var(--accentbg);border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent)}
+.transport-choice-num{position:absolute;left:7px;top:7px;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:900;display:grid;place-items:center}
+.transport-choice-icon{font-size:25px;line-height:1}
+.transport-choice strong{font-size:12px;line-height:1.25}
+.transport-choice small{font-size:9px;color:var(--muted);line-height:1.2}
+.transport-detail-panel{min-height:260px;background:var(--panel)}
+.transport-detail-inner{height:100%;display:flex;flex-direction:column}
+.transport-detail-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.transport-detail-top h3{margin:4px 0 3px;font-size:20px}
+.transport-detail-icon{width:48px;height:48px;border-radius:14px;background:var(--accentbg);display:grid;place-items:center;font-size:25px;flex:none}
+.transport-detail-text{line-height:1.6;margin:14px 0 0}
+.transport-detail-panel .transport-details{margin-top:14px}
+.transport-detail-panel .transport-maps{margin-top:auto;padding-top:14px}
+@media(max-width:850px){.transport-workspace{grid-template-columns:1fr}.transport-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.transport-detail-panel{min-height:0}}
+@media(max-width:520px){.transport-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.transport-choice{min-height:100px}.transport-detail-top h3{font-size:17px}}

@@ -37,57 +37,40 @@ function init(){
   $("#expenseFlights").textContent=euro(flightTotal);
 
   const transportPlan = [
-    {
-      date:"18 mayo", city:"Tokio", title:"✈️ Narita → Yanaka", summary:"Llegada a Narita · Keisei Skyliner hasta Nippori · paseo al alojamiento", items:[
-        {icon:"🚆", type:"AEROPUERTO → TOKIO", title:"Narita → Nippori · Keisei Skyliner", route:"Narita Airport → Nippori", text:"En Narita, seguir las indicaciones de Keisei / Skyliner. Terminal 1: Narita Airport Terminal 1. Terminal 2/3: Narita Airport Terminal 2·3.", details:["⏱️ Unos 36 min","💴 Actualmente ~2.470–2.580 ¥ por persona","💺 Asiento reservado","🎟️ Compra online o en la estación","📌 No es necesario reservar con mucha antelación"], note:"Como llegáis a las 15:10, no conviene comprar un tren con una hora demasiado ajustada. Mejor comprarlo online o al llegar, una vez sepáis cuánto habéis tardado en inmigración y equipaje."},
-        {icon:"🚶", type:"ÚLTIMO TRAMO", title:"Nippori → alojamiento", route:"Estación Nippori → Yanaka", text:"Desde Nippori, continuar andando hasta el alojamiento en Yanaka.", details:["⏱️ Probablemente 10–20 min andando","📍 Depende del punto exacto del alojamiento"], note:"Nippori será probablemente vuestra estación de referencia durante la estancia en Yanaka."}
-      ]
-    },
-    {
-      date:"19 mayo", city:"Tokio", title:"🏯 Yanaka → Asakusa → Ueno → Akihabara → Yanaka", summary:"JR Yamanote + Tokyo Metro Ginza Line · sin reservas", items:[
-        {icon:"🚆", type:"IDA", title:"Nippori → Ueno", route:"JR Yamanote Line", text:"Desde Nippori, coger la línea JR Yamanote hasta Ueno.", details:["⏱️ ~4–5 min","🎟️ Sin reserva","💳 Suica / PASMO: tocar al entrar y al salir"]},
-        {icon:"🚇", type:"TRANSBORDO", title:"Ueno → Asakusa", route:"Tokyo Metro Ginza Line", text:"En Ueno, cambiar a la línea Ginza del Metro de Tokio y bajar en Asakusa.", details:["⏱️ ~5 min","💴 ~178 ¥ con IC / 180 ¥ con billete","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚇", type:"REGRESO", title:"Asakusa → Ueno", route:"Tokyo Metro Ginza Line", text:"Volver desde Asakusa hasta Ueno por la misma línea Ginza.", details:["⏱️ ~5 min","💴 ~180 ¥","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚆", type:"TRASLADO", title:"Ueno → Akihabara", route:"JR Yamanote Line", text:"Desde JR Ueno, coger la Yamanote hasta Akihabara.", details:["⏱️ ~4 min","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚆", type:"REGRESO", title:"Akihabara → Nippori", route:"JR Yamanote Line", text:"Volver desde Akihabara hasta Nippori y caminar hasta el alojamiento.", details:["⏱️ ~7–8 min","🎟️ Sin reserva","💳 Suica / PASMO"], note:"💰 Transporte aproximado del día: ~500–800 ¥ por persona (≈ 3–5 €)."}
-      ]
-    },
-    {
-      date:"20 mayo", city:"Tokio", title:"🐟 Yanaka → Toyosu → Odaiba → Shibuya → fiesta", summary:"El día con más desplazamientos · madrugón · Yamanote + Yurikamome + Rinkai", items:[
-        {icon:"🚆", type:"MADRUGÓN", title:"Nippori → Shimbashi", route:"JR Yamanote Line", text:"Salir muy temprano desde Nippori hacia Shimbashi para continuar hasta Toyosu.", details:["⏱️ ~25 min","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚝", type:"TRASLADO", title:"Shimbashi → Shijo-mae", route:"Yurikamome", text:"Desde Shimbashi, coger Yurikamome hasta Shijo-mae (市場前). Esta es la estación que debéis buscar para el Mercado de Toyosu.", details:["⏱️ ~27 min desde Shimbashi","💴 Aproximadamente 500–700 ¥ desde Nippori contando el trayecto completo","📍 Shijo-mae está justo al lado del mercado","🎟️ Sin reserva"], note:"⚠️ No os bajéis en la estación Toyosu: para el mercado, la referencia es Shijo-mae."},
-        {icon:"🎟️", type:"SUBASTA DE ATÚN", title:"Acceso a la subasta de Toyosu", route:"Plataforma de observación", text:"La opción actual de acceso cercano a la subasta requiere inscripción online y sorteo. Es gratuita. Como sois 4, podéis presentar una única solicitud para los cuatro cuando se abra la convocatoria correspondiente a mayo de 2027.", details:["🕐 Subasta alrededor de las 05:30","👀 Plataforma cercana actualmente 05:45–06:25","🎟️ Inscripción online + sorteo","👥 Hasta 5 personas por solicitud","📌 Convocatoria y condiciones para 2027: comprobar cuando se acerque la fecha"], note:"👀 Plan B: si no conseguís plaza, actualmente se puede observar la subasta desde la pasarela del segundo piso sin reserva, aproximadamente entre 05:30 y 06:30."},
-        {icon:"🚝", type:"TRASLADO", title:"Shijo-mae → Daiba", route:"Yurikamome", text:"Después del mercado, continuar en Yurikamome hacia Daiba para recorrer Odaiba.", details:["⏱️ ~15–20 min","💴 ~300–400 ¥","🎟️ Sin reserva"], note:"La opción indicada para vuestro itinerario es bajar en Daiba."},
-        {icon:"🚆", type:"TRASLADO", title:"Odaiba → Shibuya", route:"Tokyo Teleport → Shibuya · Rinkai Line", text:"En lugar de volver a Shimbashi, desplazaros hasta Tokyo Teleport y coger la Rinkai Line hacia Shibuya.", details:["⏱️ ~25–30 min","💴 ~500–600 ¥","🎟️ Sin reserva"], note:"Esta opción evita volver hasta Shimbashi y encaja mejor con vuestro siguiente destino."},
-        {icon:"🚕", type:"REGRESO NOCTURNO", title:"Shibuya → alojamiento", route:"Tren o taxi según la hora", text:"Si volvéis de fiesta muy tarde, los trenes pueden haber terminado su servicio. En ese caso, tocaría utilizar taxi.", details:["🚆 Tren: solo si todavía hay servicio","🚕 Taxi: alternativa si regresáis de madrugada","⚠️ No contéis con el tren si la noche se alarga mucho"], note:"🎉 Para la vuelta de la fiesta, dejad esta parte abierta y decidid según la hora a la que terminéis."}
-      ]
-    },
-    {
-      date:"21 mayo", city:"Tokio", title:"🌳 Yanaka → Meiji Jingu → Harajuku → Omotesando → Kabuki → Shinjuku → Yanaka", summary:"Principalmente a pie · JR Yamanote + Metro · sin reservas de transporte", items:[
-        {icon:"🚆", type:"IDA", title:"Nippori → Harajuku", route:"JR Yamanote Line", text:"Desde Nippori, coger la Yamanote hasta Harajuku. Desde Harajuku Station, caminar hacia Meiji Jingu.", details:["⏱️ ~30 min","🚶 Harajuku Station → Meiji Jingu: ~5–10 min","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚶", type:"A PIE", title:"Meiji Jingu → Harajuku → Omotesando", route:"Recorrido andando", text:"Todo este tramo se puede hacer andando. No hace falta coger transporte entre Meiji Jingu, Harajuku y Omotesando.", details:["🚶 Meiji Jingu → Harajuku: ~10 min","🚶 Harajuku → Omotesando: ~10–15 min","🎟️ Sin reserva"]},
-        {icon:"🚇", type:"TEATRO", title:"Omotesando → Ginza / Kabuki-za", route:"Tokyo Metro Ginza Line", text:"Si la función es en Kabuki-za, ir desde Omotesando hacia Ginza. Después, caminar hasta Kabuki-za / Higashi-Ginza. Otra opción es utilizar directamente Higashi-Ginza según la ruta que mejor encaje.", details:["⏱️ ~15 min hasta Ginza","💴 ~180–220 ¥","🎟️ Sin reserva","📍 Kabuki-za está en la zona de Ginza / Higashi-Ginza"], note:"🎭 El horario de la función y la entrada de Kabuki se confirmarán más adelante; el transporte depende de la sesión finalmente elegida."},
-        {icon:"🚇", type:"TRASLADO", title:"Ginza → Shinjuku", route:"Tokyo Metro Marunouchi Line", text:"Después del teatro, coger la Marunouchi Line hacia Shinjuku.", details:["⏱️ ~15–20 min","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚆", type:"REGRESO", title:"Shinjuku → Nippori", route:"JR Yamanote Line", text:"Al terminar la visita nocturna de Shinjuku, volver a Nippori.", details:["⏱️ ~20–25 min","🎟️ Sin reserva","💳 Suica / PASMO"]}
-      ]
-    },
-    {
-      date:"22 mayo", city:"Nikko", title:"🦌 Yanaka → Asakusa → Tobu-Nikko → Chuzenji → Kegon → Tokio", summary:"El día en el que sí conviene reservar: Tobu Limited Express", items:[
-        {icon:"🚆", type:"IDA", title:"Nippori → Ueno", route:"JR Yamanote Line", text:"Salir de Yanaka y coger la Yamanote desde Nippori hasta Ueno.", details:["⏱️ ~4–5 min","🎟️ Sin reserva","💳 Suica / PASMO"]},
-        {icon:"🚇", type:"TRANSBORDO", title:"Ueno → Asakusa", route:"Tokyo Metro Ginza Line", text:"Desde Ueno, coger la Ginza Line hasta Asakusa y caminar hasta la estación Tobu Asakusa.", details:["⏱️ ~5 min","🎟️ Sin reserva","💳 Suica / PASMO"], note:"⚠️ Tobu Asakusa no es exactamente la misma estación que Tokyo Metro Asakusa, aunque están conectadas andando."},
-        {icon:"🚆", type:"RESERVAR", title:"Asakusa → Tobu-Nikko", route:"Tobu Railway · Limited Express SPACIA / Revaty", text:"Coger un Limited Express desde Tobu Asakusa hasta Tobu-Nikko. El trayecto es de aproximadamente 1 h 50 min–2 h y el asiento es reservado.", details:["⏱️ ~1 h 50 min–2 h","💺 Asiento reservado","🎟️ Hace falta billete/tarifa normal + suplemento Limited Express","📅 Venta del Limited Express: desde las 09:00 del mes anterior","📅 Para el 22 mayo 2027: aproximadamente 22 abril 2027 a las 09:00 (hora de Japón)"], note:"⭐ Para este día sí merece la pena reservar online en cuanto se abra la venta. También podéis comprarlo en el Tobu Tourist Information Center de Asakusa."},
-        {icon:"🎟️", type:"PASE OPCIONAL", title:"Nikko Pass All Area", route:"Tobu Railway", text:"Como vuestro recorrido incluye Nikko + Lago Chuzenji + Kegon Falls, conviene comparar el Nikko Pass All Area con comprar los billetes por separado.", details:["💴 Precio indicado actualmente: 8.000 ¥","🚆 Incluye ida y vuelta Asakusa–Nikko","🚌 Incluye transporte ilimitado en la zona de Nikko","🌊 Incluye la zona de Lake Chuzenji / Okunikko","⚠️ No incluye el suplemento del Limited Express"], note:"El precio y condiciones son los indicados en la información que habéis preparado y habrá que comprobarlos de nuevo para mayo de 2027."},
-        {icon:"🚌", type:"NIKKO → LAGO", title:"Tobu-Nikko → Chuzenji Onsen", route:"Tobu Bus", text:"Desde Tobu-Nikko Station, coger el autobús hacia Chuzenji Onsen.", details:["⏱️ ~50 min","💺 No se reserva asiento","🎟️ Usar el Nikko Pass si finalmente lo compráis"]},
-        {icon:"🚶", type:"A PIE", title:"Chuzenji → Kegon Falls", route:"A pie", text:"Desde Chuzenji Onsen, ir andando hasta Kegon Falls.", details:["🚶 ~5–10 min","🎟️ Sin reserva"]},
-        {icon:"🚌", type:"REGRESO", title:"Kegon Falls → Tobu-Nikko", route:"Tobu Bus", text:"Volver en autobús desde Kegon Falls hasta Tobu-Nikko Station.", details:["⏱️ ~50 min","💺 No se reserva asiento","🎟️ Usar el Nikko Pass si finalmente lo compráis"]},
-        {icon:"🚆", type:"REGRESO A TOKIO", title:"Tobu-Nikko → Asakusa", route:"Tobu Railway · Limited Express", text:"Regresar desde Tobu-Nikko hasta Asakusa con el Limited Express reservado.", details:["💺 Asiento reservado","🎟️ Billete/tarifa normal + suplemento Limited Express","📌 Conviene reservar la vuelta al mismo tiempo que la ida"]}
-      ]
-    },
-    {
-      date:"23 mayo", city:"Hakone", title:"🚆 Tokio → Hakone", summary:"El detalle de este traslado queda pendiente de añadir con las opciones concretas a Fukuzumiro", items:[
-        {icon:"📝", type:"PENDIENTE", title:"Traslado Yanaka → Fukuzumiro", route:"Tokio → Hakone", text:"Este día ya figura en el itinerario como traslado de Tokio a Hakone, pero en la información facilitada aquí no se ha incluido todavía la opción concreta de transporte hasta Fukuzumiro.", details:["🏨 Destino: Fukuzumiro · Tounosawa, Hakone","📅 23 mayo 2027","🔎 Pendiente de definir ruta, horarios, reservas y precio"], note:"No añado una ruta concreta para no inventar una opción que no aparece en la información que me has pasado. Cuando me pases ese tramo, lo incorporamos aquí con el mismo formato."}
-      ]
-    }
+    {date:"18 mayo",city:"Tokio",title:"✈️ Narita → Yanaka",summary:"Solo 1 transporte: aeropuerto → Nippori",items:[
+      {icon:"🚆",type:"TREN · AEROPUERTO",title:"Narita → Nippori",route:"Keisei Skyliner",text:"Desde la estación de Narita Airport, seguir las indicaciones Keisei / Skyliner y coger el Limited Express hasta Nippori. Desde allí, el alojamiento queda a pie.",details:["⏱️ ~36 min","💴 ~2.470–2.580 ¥ / persona","💺 Asiento reservado","🎟️ Se compra online o en la estación","📌 No hace falta reservar con mucha antelación"],note:"💡 Al llegar a las 15:10, mejor comprar el billete cuando hayáis pasado inmigración y recogido el equipaje, para no depender de una hora concreta.",maps:true}
+    ]},
+    {date:"19 mayo",city:"Tokio",title:"🏯 Yanaka → Asakusa → Ueno → Akihabara",summary:"4 trayectos en JR + Metro · Suica/PASMO · sin reservas",items:[
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Nippori → Ueno",route:"JR Yamanote Line",text:"Desde Nippori, coger la Yamanote hasta Ueno.",details:["⏱️ ~4–5 min","💴 Tarifa corta según estación / IC","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚇",type:"METRO · GINZA LINE",title:"Ueno → Asakusa",route:"Tokyo Metro Ginza Line",text:"En Ueno, cambiar al Metro de Tokio y coger la Ginza Line hasta Asakusa.",details:["⏱️ ~5 min","💴 ~178 ¥ con IC / 180 ¥ billete","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚇",type:"METRO · GINZA LINE",title:"Asakusa → Ueno",route:"Tokyo Metro Ginza Line",text:"Volver desde Asakusa hasta Ueno por la misma línea.",details:["⏱️ ~5 min","💴 ~180 ¥","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Ueno → Akihabara",route:"JR Yamanote Line",text:"Desde JR Ueno, coger la Yamanote hasta Akihabara.",details:["⏱️ ~4 min","💴 Tarifa corta según estación / IC","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Akihabara → Nippori",route:"JR Yamanote Line",text:"Volver desde Akihabara hasta Nippori.",details:["⏱️ ~7–8 min","💴 Tarifa corta según estación / IC","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true}
+    ]},
+    {date:"20 mayo",city:"Tokio",title:"🐟 Yanaka → Toyosu → Odaiba → Shibuya",summary:"Madrugón · JR Yamanote + Yurikamome + Rinkai Line",items:[
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Nippori → Shimbashi",route:"JR Yamanote Line",text:"Salir temprano desde Nippori hacia Shimbashi para continuar hacia Toyosu.",details:["⏱️ ~25 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚝",type:"YURIKAMOME",title:"Shimbashi → Shijo-mae",route:"Yurikamome",text:"Desde Shimbashi, coger Yurikamome y bajar en Shijo-mae, la estación que debéis usar para el Mercado de Toyosu.",details:["⏱️ ~27 min","💴 Tarifa según trayecto / IC","🎟️ Sin reserva","💳 Suica / PASMO","⚠️ Bajar en Shijo-mae, no en Toyosu"],maps:true},
+      {icon:"🚝",type:"YURIKAMOME",title:"Shijo-mae → Daiba",route:"Yurikamome",text:"Después de Toyosu, continuar en Yurikamome hasta Daiba para recorrer Odaiba.",details:["⏱️ ~15–20 min","💴 ~300–400 ¥","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚆",type:"RINKAI LINE",title:"Tokyo Teleport → Shibuya",route:"Rinkai Line",text:"Desde Tokyo Teleport, coger la Rinkai Line hacia Shibuya. Es la opción planteada para evitar volver hasta Shimbashi.",details:["⏱️ ~25–30 min","💴 ~500–600 ¥","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚕",type:"VUELTA DE MADRUGADA",title:"Shibuya → Yanaka",route:"Tren o taxi según la hora",text:"Si la fiesta termina cuando ya no haya servicio ferroviario, la alternativa será taxi.",details:["🚆 Tren: solo mientras haya servicio","🚕 Taxi: alternativa de madrugada","🎟️ No se reserva tren"],maps:true}
+    ]},
+    {date:"21 mayo",city:"Tokio",title:"🌳 Yanaka → Meiji Jingu → Harajuku → Omotesando → Kabuki → Shinjuku",summary:"JR Yamanote + Metro · varios tramos se hacen andando",items:[
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Nippori → Harajuku",route:"JR Yamanote Line",text:"Desde Nippori, coger la Yamanote hasta Harajuku. Desde allí se continúa andando hacia Meiji Jingu.",details:["⏱️ ~30 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚇",type:"METRO · GINZA LINE",title:"Omotesando → Ginza / Kabuki-za",route:"Tokyo Metro Ginza Line",text:"Si la función es en Kabuki-za, coger la Ginza Line desde Omote-sando hacia Ginza y continuar andando hasta Kabuki-za / Higashi-Ginza.",details:["⏱️ ~15 min hasta Ginza","💴 ~180–220 ¥","🎟️ Sin reserva","💳 Suica / PASMO"],note:"🎭 El transporte final puede ajustarse cuando tengamos confirmada la función de Kabuki.",maps:true},
+      {icon:"🚇",type:"METRO · MARUNOUCHI LINE",title:"Ginza → Shinjuku",route:"Tokyo Metro Marunouchi Line",text:"Después del teatro, coger la Marunouchi Line hacia Shinjuku.",details:["⏱️ ~15–20 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Shinjuku → Nippori",route:"JR Yamanote Line",text:"Al terminar en Shinjuku, volver a Nippori.",details:["⏱️ ~20–25 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true}
+    ]},
+    {date:"22 mayo",city:"Nikko",title:"🦌 Yanaka → Asakusa → Tobu-Nikko → Chuzenji → Kegon → Tokio",summary:"Día con reserva: Limited Express Tobu · bus en Nikko",items:[
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Nippori → Ueno",route:"JR Yamanote Line",text:"Desde Nippori, coger la Yamanote hasta Ueno.",details:["⏱️ ~4–5 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚇",type:"METRO · GINZA LINE",title:"Ueno → Asakusa",route:"Tokyo Metro Ginza Line",text:"Desde Ueno, coger la Ginza Line hasta Asakusa y caminar hasta Tobu Asakusa.",details:["⏱️ ~5 min","🎟️ Sin reserva","💳 Suica / PASMO","⚠️ Tobu Asakusa y Tokyo Metro Asakusa son estaciones distintas, aunque están conectadas andando"],maps:true},
+      {icon:"🚆",type:"LIMITED EXPRESS · RESERVAR",title:"Tobu Asakusa → Tobu-Nikko",route:"Tobu Railway · SPACIA / Revaty",text:"Coger el Limited Express reservado desde Tobu Asakusa hasta Tobu-Nikko.",details:["⏱️ ~1 h 50 min–2 h","💺 Asiento reservado","🎟️ Tarifa normal + suplemento Limited Express","📅 Venta: desde las 09:00 del mes anterior","📌 Para el 22/05/2027: aproximadamente 22/04/2027 a las 09:00 JST"],note:"⭐ Este es el transporte del viaje que sí conviene reservar con antelación.",maps:true},
+      {icon:"🚌",type:"BUS TOBU",title:"Tobu-Nikko → Chuzenji Onsen",route:"Tobu Bus",text:"Desde Tobu-Nikko Station, coger el autobús hacia Chuzenji Onsen.",details:["⏱️ ~50 min","🎟️ Sin reserva","💳 Nikko Pass si finalmente lo compráis"],maps:true},
+      {icon:"🚌",type:"BUS TOBU",title:"Kegon Falls → Tobu-Nikko",route:"Tobu Bus",text:"Después de visitar Kegon Falls, volver en autobús a Tobu-Nikko Station.",details:["⏱️ ~50 min","🎟️ Sin reserva","💳 Nikko Pass si finalmente lo compráis"],maps:true},
+      {icon:"🚆",type:"LIMITED EXPRESS · RESERVAR",title:"Tobu-Nikko → Asakusa",route:"Tobu Railway · Limited Express",text:"Regreso a Asakusa con el Limited Express reservado.",details:["💺 Asiento reservado","🎟️ Tarifa normal + suplemento Limited Express","📌 Reservar la vuelta junto con la ida"],maps:true}
+    ]},
+    {date:"23 mayo",city:"Hakone",title:"🚆 Tokio → Hakone",summary:"Traslado pendiente de concretar hasta Fukuzumiro",items:[
+      {icon:"🚆",type:"PENDIENTE",title:"Yanaka → Fukuzumiro",route:"Tokio → Hakone",text:"El itinerario indica traslado a Hakone, pero todavía no hemos definido aquí el tren concreto, precio ni reserva.",details:["🏨 Destino: Fukuzumiro · Tounosawa, Hakone","📅 23 mayo 2027","🔎 Falta concretar ruta, horarios, reserva y coste"]}
+    ]}
   ];
 
   const transportMaps = {
@@ -124,11 +107,18 @@ function init(){
     return `<div class="transport-maps"><span class="transport-maps-label">📍 Google Maps</span><a class="map-link" href="${mapsUrl(pts[0])}" target="_blank" rel="noopener">🚉 Salida · ${pts[0]}</a><a class="map-link" href="${mapsUrl(pts[1])}" target="_blank" rel="noopener">📍 Llegada · ${pts[1]}</a></div>`;
   }
 
-  function renderTransportItem(t){
-    return `<article class="item transport-item"><div class="item-head"><div class="transport-head-row"><div class="transport-icon">${t.icon}</div><div><div class="itinerary-type">${t.type}</div><h3>${t.title}</h3><div class="muted">${t.route}</div></div></div><div class="transport-preview">${t.text}</div>${t.details?`<div class="chips">${t.details.slice(0,3).map(x=>`<span class="chip">${x}</span>`).join("")}</div>`:""}</div><div class="item-body"><p>${t.text}</p>${t.details?`<div class="transport-details">${t.details.map(x=>`<div>${x}</div>`).join("")}</div>`:""}${t.note?`<div class="itinerary-note">${t.note}</div>`:""}${mapsButtons(t)}</div></article>`;
+  function transportDetailHTML(t){
+    return `<div class="transport-detail-inner">
+      <div class="transport-detail-top"><div><div class="itinerary-type">${t.type}</div><h3>${t.title}</h3><div class="muted">${t.route}</div></div><div class="transport-detail-icon">${t.icon}</div></div>
+      <p class="transport-detail-text">${t.text}</p>
+      ${t.details?`<div class="transport-details">${t.details.map(x=>`<div>${x}</div>`).join("")}</div>`:""}
+      ${t.note?`<div class="itinerary-note">${t.note}</div>`:""}${mapsButtons(t)}
+    </div>`;
   }
-  function renderTransportDay(d){
-    return `<article class="transport-day"><button class="transport-day-head" type="button" aria-expanded="false"><div class="transport-day-main"><span class="transport-day-date">${d.date}</span><span class="transport-day-city">${d.city}</span><h2>${d.title}</h2><p>${d.summary}</p></div><div class="transport-day-meta"><span class="transport-count">${d.items.length} trayectos</span><span class="transport-day-chevron">⌄</span></div></button><div class="transport-day-body"><div class="stack">${d.items.map(renderTransportItem).join("")}</div></div></article>`;
+  function renderTransportDay(d,di){
+    const cards=d.items.map((x,i)=>`<button class="transport-choice ${i===0?'selected':''}" type="button" data-day="${di}" data-step="${i}"><span class="transport-choice-num">${i+1}</span><span class="transport-choice-icon">${x.icon}</span><strong>${x.title}</strong><small>${x.type}</small></button>`).join("");
+    const first={...d.items[0],step:1};
+    return `<article class="transport-day"><button class="transport-day-head" type="button" aria-expanded="false"><div class="transport-day-main"><span class="transport-day-date">${d.date}</span><span class="transport-day-city">${d.city}</span><h2>${d.title}</h2><p>${d.summary}</p></div><div class="transport-day-meta"><span class="transport-count">${d.items.length} transportes</span><span class="transport-day-chevron">⌄</span></div></button><div class="transport-day-body"><div class="transport-workspace"><div class="transport-choice-panel"><div class="transport-choice-label">🚆 DESPLAZAMIENTOS</div><div class="transport-choice-grid">${cards}</div></div><div class="transport-detail-panel" data-day-detail="${di}">${transportDetailHTML(first)}</div></div></div></article>`;
   }
   const transportList=document.getElementById("transportList");
   if(transportList){
@@ -138,6 +128,16 @@ function init(){
         const day=head.parentElement;
         const open=day.classList.toggle("open");
         head.setAttribute("aria-expanded",open?"true":"false");
+      });
+    });
+    transportList.querySelectorAll(".transport-choice").forEach(choice=>{
+      choice.addEventListener("click",()=>{
+        const di=Number(choice.dataset.day), si=Number(choice.dataset.step);
+        const day=choice.closest(".transport-day");
+        day.querySelectorAll(".transport-choice").forEach(c=>c.classList.remove("selected"));
+        choice.classList.add("selected");
+        const panel=day.querySelector("[data-day-detail]");
+        panel.innerHTML=transportDetailHTML({...transportPlan[di].items[si],step:si+1});
       });
     });
   }
@@ -216,12 +216,52 @@ function init(){
     }
   };
 
+
+  const itineraryRoutes = {
+    "18": [
+      {label:"Ruta completa · Narita → Yanaka → Yanaka Ginza", origin:"Narita International Airport", waypoints:["Yanaka, Taito City, Tokyo"], destination:"Yanaka Ginza Shopping Street, Tokyo", mode:"transit"}
+    ],
+    "19": [
+      {label:"Ruta 1 · Yanaka → Asakusa → Ueno → Akihabara", origin:"Yanaka, Taito City, Tokyo", waypoints:["Asakusa Station, Taito City, Tokyo","Ueno Station, Taito City, Tokyo"], destination:"Akihabara Station, Tokyo", mode:"transit"},
+      {label:"Regreso · Akihabara → Yanaka", origin:"Akihabara Station, Tokyo", waypoints:[], destination:"Yanaka, Taito City, Tokyo", mode:"transit"}
+    ],
+    "20": [
+      {label:"Ruta 1 · Yanaka → Toyosu → Odaiba → Shibuya", origin:"Yanaka, Taito City, Tokyo", waypoints:["Toyosu Market, Tokyo","Daiba Station, Tokyo"], destination:"Shibuya Station, Tokyo", mode:"transit"},
+      {label:"Noche · Shibuya → Yanaka", origin:"Shibuya Station, Tokyo", waypoints:[], destination:"Yanaka, Taito City, Tokyo", mode:"transit"}
+    ],
+    "21": [
+      {label:"Ruta 1 · Yanaka → Meiji Jingu → Harajuku → Omotesando", origin:"Yanaka, Taito City, Tokyo", waypoints:["Meiji Jingu, Tokyo","Harajuku Station, Tokyo"], destination:"Omotesando Station, Tokyo", mode:"transit"},
+      {label:"Ruta 2 · Omotesando → Kabuki-za → Shinjuku → Yanaka", origin:"Omotesando Station, Tokyo", waypoints:["Kabuki-za, Tokyo","Shinjuku Station, Tokyo"], destination:"Yanaka, Taito City, Tokyo", mode:"transit"}
+    ],
+    "22": [
+      {label:"Ruta 1 · Yanaka → Asakusa → Tobu-Nikko", origin:"Yanaka, Taito City, Tokyo", waypoints:["Asakusa Station, Taito City, Tokyo"], destination:"Tobu-Nikko Station, Nikko", mode:"transit"},
+      {label:"Ruta 2 · Tobu-Nikko → Chuzenji → Kegon Falls", origin:"Tobu-Nikko Station, Nikko", waypoints:["Chuzenji Onsen, Nikko"], destination:"Kegon Falls, Nikko", mode:"transit"},
+      {label:"Regreso · Kegon Falls → Tobu-Nikko → Yanaka", origin:"Kegon Falls, Nikko", waypoints:["Tobu-Nikko Station, Nikko"], destination:"Yanaka, Taito City, Tokyo", mode:"transit"}
+    ]
+  };
+
+  function mapsRouteUrl(route){
+    const params=new URLSearchParams();
+    params.set("api","1");
+    params.set("origin",route.origin);
+    params.set("destination",route.destination);
+    params.set("travelmode",route.mode||"transit");
+    if(route.waypoints?.length) params.set("waypoints",route.waypoints.join("|"));
+    return `https://www.google.com/maps/dir/?${params.toString()}`;
+  }
+
+  function renderItineraryRoutes(day){
+    const routes=itineraryRoutes[day]; if(!routes) return "";
+    return `<div class="itinerary-routes"><div class="itinerary-routes-head"><div><div class="itinerary-type">RUTA EN GOOGLE MAPS</div><h4>🗺️ Abrir el recorrido del día</h4></div><span class="muted">${routes.length} ruta${routes.length>1?"s":""}</span></div><div class="itinerary-route-list">${routes.map(r=>`<a class="itinerary-route-btn" href="${mapsRouteUrl(r)}" target="_blank" rel="noopener">🧭 ${r.label}<span>↗</span></a>`).join("")}</div><div class="itinerary-route-note">Google Maps abrirá la ruta con los puntos en el orden indicado. Hemos dividido los días largos en varios tramos para que funcione también en móvil.</div></div>`;
+  }
+
   function renderItineraryDay(d,i){
     const detail=tokyoPlan[d[0]];
     if(!detail) return `<article class="item itinerary-day"><div class="item-head itinerary-day-head"><div class="itinerary-day-main"><span class="itinerary-day-date">${d[0]} MAYO</span><span class="itinerary-day-city">${d[1]}</span><h3>📍 ${d[2]}</h3><div class="muted">Pulsa para desplegar el itinerario completo</div></div><span class="itinerary-day-chevron">⌄</span></div><div class="item-body"><p class="muted">Este día es editable. Aquí iremos añadiendo horarios, reservas, transporte, restaurantes y enlaces a mapas.</p></div></article>`;
     return `<article class="item itinerary-day"><div class="item-head itinerary-day-head"><div class="itinerary-day-main"><span class="itinerary-day-date">${d[0]} MAYO</span><span class="itinerary-day-city">${d[1]}</span><h3>📍 ${detail.title}</h3><div class="muted">${detail.intro}</div></div><span class="itinerary-day-chevron">⌄</span></div><div class="item-body"><div class="itinerary-timeline">${detail.stops.map(s=>`<div class="itinerary-stop"><div class="itinerary-time">${s.time}</div><div class="itinerary-dot">${s.icon}</div><div class="itinerary-content"><div class="itinerary-type">${s.type}</div><h4>${s.title}</h4><p>${s.text}</p>${s.tags?`<div class="chips">${s.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>`:""}</div></div>`).join("")}</div><div class="itinerary-note">${detail.note}</div></div></article>`;
   }
   $("#itineraryList").innerHTML=TRIP.days.map(renderItineraryDay).join("");
+
   // Desplegable de cada día: usamos delegación para que funcione de forma robusta
   // incluso si el contenido del itinerario se vuelve a renderizar.
   const itineraryList = $("#itineraryList");

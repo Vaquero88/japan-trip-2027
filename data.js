@@ -39,11 +39,11 @@ const TRIP = {
     {category:"Otros gastos", place:"Viaje completo", description:"Suscripción ChatGPT", amount:8.00}
   ],
   days: [
-    ["18","Tokio","✈️ Llegada a Narita · Shibuya"],
-    ["19","Tokio","⛩️ Asakusa · 🎮 Akihabara"],
-    ["20","Tokio","🐟 Toyosu · 🌊 Odaiba · 🌃 Kabukicho"],
-    ["21","Tokio","⛩️ Meiji · Harajuku · Shibuya/Ueno"],
-    ["22","Nikko","⛩️ Toshogu · 🌊 Lago Chuzenji / Kegon"],
+    ["18","Tokio","✈️ Llegada a Narita · Yanaka · Yanaka Ginza"],
+    ["19","Tokio","⛩️ Asakusa · 🌳 Ueno · 🎮 Akihabara"],
+    ["20","Tokio","🐟 Toyosu · 🌊 Odaiba · 🌃 Shibuya · Fiesta"],
+    ["21","Tokio","⛩️ Meiji Jingu · 🛍️ Harajuku · 🎭 Kabuki · 🌃 Shinjuku"],
+    ["22","Nikko","⛩️ Toshogu · 🌊 Lago Chuzenji · 💦 Kegon Falls"],
     ["23","Hakone","🚆 Tokio → Hakone · ♨️ Fukuzumiro"],
     ["24","Kioto","🚄 Hakone → Kioto · Gion · Pontocho"],
     ["25","Kioto","⛩️ Fushimi Inari · Kiyomizu-dera"],
