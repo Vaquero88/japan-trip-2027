@@ -427,3 +427,34 @@ body.dark-mode #menuBtn{color:#fff;background:#202831;border-color:#46515d}
 .calendar .calday b,.calendar .calday span{position:relative;color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.65)}
 .calendar .calday.selected{outline:2px solid var(--accent);outline-offset:1px}
 @media(max-width:800px){.stay-visual{height:145px}.flight-group-head{padding:15px}.flight-group-head::after{float:right}.calendar .calday{min-height:72px}}
+
+
+/* V63 · Notas y tips: vídeos en tarjetas pequeñas para añadir más enlaces */
+.travel-videos{margin-top:28px}
+.travel-videos-title{margin-bottom:14px}
+.travel-videos-title h2{margin:4px 0 0;font-size:22px}
+.travel-videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,300px));gap:16px;align-items:start}
+.travel-video-card{width:100%;overflow:hidden;border:1px solid var(--border);border-radius:16px;background:var(--panel);box-shadow:0 5px 18px rgba(0,0,0,.06)}
+.travel-video-thumb{position:relative;display:block;aspect-ratio:16/9;background:var(--accentbg);overflow:hidden;text-decoration:none}
+.travel-video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s ease}
+.travel-video-thumb:hover img{transform:scale(1.025)}
+.travel-video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:36px;border-radius:10px;background:rgba(220,0,0,.92);color:#fff;display:grid;place-items:center;font-size:18px;padding-left:2px;box-shadow:0 5px 15px rgba(0,0,0,.28)}
+.travel-video-info{padding:12px 14px 14px}
+.travel-video-info h3{margin:5px 0 11px;font-size:16px}
+.travel-video-info .btn{width:100%;text-align:center}
+@media(max-width:700px){.travel-videos-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.travel-video-info{padding:10px}.travel-video-info h3{font-size:14px}.travel-video-play{width:44px;height:32px;font-size:16px}}
+@media(max-width:430px){.travel-videos-grid{grid-template-columns:1fr 1fr}}
+
+/* V64 · Lugares: Tokio agrupado por zonas con enlaces directos a Google Maps */
+.places-intro{max-width:850px;margin:-4px 0 18px;line-height:1.6}
+.places-zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.places-zone{border:1px solid var(--border);border-radius:18px;background:var(--panel);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.045)}
+.places-zone-head{display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--accentbg),var(--panel))}
+.places-zone-icon{width:44px;height:44px;border-radius:13px;background:var(--panel);display:grid;place-items:center;font-size:24px;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.places-zone-head h2{margin:3px 0 0;font-size:19px;line-height:1.2}
+.places-list{padding:7px 10px 10px}
+.places-list a{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:11px;color:var(--text);text-decoration:none;font-size:13px;line-height:1.35;transition:.15s ease}
+.places-list a:hover{background:var(--accentbg);color:var(--accent);transform:translateX(2px)}
+.places-list a span{flex:1}
+.places-list a b{font-size:13px;color:var(--accent);opacity:.75}
+@media(max-width:800px){.places-zones{grid-template-columns:1fr}.places-zone-head h2{font-size:18px}}

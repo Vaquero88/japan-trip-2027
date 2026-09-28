@@ -23,7 +23,7 @@
       <button data-section="moneda">💱 Monedas</button>
       <button data-section="lugares">📍 Lugares</button>
       <button data-section="maleta">🧳 Maleta</button>
-      <button data-section="notas">📝 Notas</button>
+      <button data-section="notas">📝 Notas y tips</button>
       <button data-section="documentacion">📁 Documentación</button>
       <button id="themeToggle" type="button" aria-label="Cambiar a modo noche">🌙 Modo noche</button>
       <button id="closeMenuBtn" type="button" class="mobile-close-menu">✕ Esconder menú</button>
@@ -224,8 +224,106 @@
     </section>
 
     <section id="lugares" class="section">
-      <div class="section-title"><div><span class="eyebrow">MAPA DEL VIAJE</span><h1>📍 Lugares</h1></div></div>
-      <div class="empty">Podremos guardar lugares con enlace directo a Google Maps.</div>
+      <div class="section-title">
+        <div><span class="eyebrow">TOKIO · LUGARES A VISITAR</span><h1>📍 Lugares</h1></div>
+      </div>
+      <p class="muted places-intro">Listado de los sitios que queremos ver en Tokio, agrupados por zonas para aprovechar mejor los desplazamientos. Pulsa en cualquier enlace para abrirlo directamente en Google Maps.</p>
+
+      <div class="places-zones">
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🏮</span><div><span class="eyebrow">TOKIO</span><h2>Asakusa</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Senso-ji+Tokyo" target="_blank" rel="noopener noreferrer">⛩️ <span>Sensō-ji</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kaminarimon+Tokyo" target="_blank" rel="noopener noreferrer">🏮 <span>Kaminarimon</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Nakamise-dori+Tokyo" target="_blank" rel="noopener noreferrer">🛍️ <span>Nakamise-dori</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sumida+River+Tokyo" target="_blank" rel="noopener noreferrer">🌊 <span>Río Sumida</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🌳</span><div><span class="eyebrow">TOKIO</span><h2>Ueno</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ueno+Park+Tokyo" target="_blank" rel="noopener noreferrer">🌳 <span>Parque Ueno</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Tokyo" target="_blank" rel="noopener noreferrer">🛍️ <span>Ameyoko</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🎮</span><div><span class="eyebrow">TOKIO</span><h2>Akihabara</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Akihabara+Tokyo" target="_blank" rel="noopener noreferrer">🎮 <span>Akihabara · anime, manga, electrónica y gaming</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Yodobashi+Akiba+Tokyo" target="_blank" rel="noopener noreferrer">🏬 <span>Yodobashi Akiba</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Akihabara+arcades+Tokyo" target="_blank" rel="noopener noreferrer">🕹️ <span>Arcades y retro gaming</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🐟</span><div><span class="eyebrow">TOKIO</span><h2>Toyosu</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Toyosu+Market+Tokyo" target="_blank" rel="noopener noreferrer">🐟 <span>Mercado de Toyosu</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Toyosu+Market+Tuna+Auction+Tokyo" target="_blank" rel="noopener noreferrer">🐟 <span>Zona de subasta / observación del atún</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🌊</span><div><span class="eyebrow">TOKIO</span><h2>Odaiba</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=DiverCity+Tokyo+Plaza+Gundam" target="_blank" rel="noopener noreferrer">🤖 <span>Gundam · DiverCity Tokyo Plaza</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rainbow+Bridge+Tokyo" target="_blank" rel="noopener noreferrer">🌉 <span>Rainbow Bridge</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Statue+of+Liberty+Odaiba+Tokyo" target="_blank" rel="noopener noreferrer">🗽 <span>Estatua de la Libertad de Odaiba</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Odaiba+Tokyo" target="_blank" rel="noopener noreferrer">🌊 <span>Bahía de Tokio / paseo de Odaiba</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">⛩️</span><div><span class="eyebrow">TOKIO</span><h2>Harajuku · Meiji · Omotesando</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Tokyo" target="_blank" rel="noopener noreferrer">⛩️ <span>Meiji Jingu</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Harajuku+Tokyo" target="_blank" rel="noopener noreferrer">🎀 <span>Harajuku</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku+Tokyo" target="_blank" rel="noopener noreferrer">🎀 <span>Takeshita Street</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Omotesando+Tokyo" target="_blank" rel="noopener noreferrer">🛍️ <span>Omotesando</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🌃</span><div><span class="eyebrow">TOKIO</span><h2>Shibuya</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Sky+Tokyo" target="_blank" rel="noopener noreferrer">🌃 <span>Shibuya SKY</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hachiko+Statue+Tokyo" target="_blank" rel="noopener noreferrer">🐕 <span>Estatua de Hachikō</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo" target="_blank" rel="noopener noreferrer">🚶 <span>Shibuya Crossing</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Center-Gai+Tokyo" target="_blank" rel="noopener noreferrer">🛍️ <span>Center-gai</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+109+Tokyo" target="_blank" rel="noopener noreferrer">🏬 <span>Shibuya 109</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Tokyo+nightlife" target="_blank" rel="noopener noreferrer">🎉 <span>Zona de fiesta / nightlife</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🎭</span><div><span class="eyebrow">TOKIO</span><h2>Ginza</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Kabukiza+Tokyo" target="_blank" rel="noopener noreferrer">🎭 <span>Kabuki-za</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" target="_blank" rel="noopener noreferrer">🏙️ <span>Ginza</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🦖</span><div><span class="eyebrow">TOKIO</span><h2>Shinjuku</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Godzilla+Head+Shinjuku+Tokyo" target="_blank" rel="noopener noreferrer">🦖 <span>Godzilla Head</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Omoide+Yokocho+Tokyo" target="_blank" rel="noopener noreferrer">🍜 <span>Omoide Yokocho</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Golden+Gai+Tokyo" target="_blank" rel="noopener noreferrer">🍻 <span>Golden Gai</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kabukicho+Tokyo" target="_blank" rel="noopener noreferrer">🌃 <span>Kabukichō</span><b>↗</b></a>
+          </div>
+        </article>
+
+        <article class="places-zone">
+          <div class="places-zone-head"><span class="places-zone-icon">🏘️</span><div><span class="eyebrow">TOKIO · ALOJAMIENTO</span><h2>Yanaka</h2></div></div>
+          <div class="places-list">
+            <a href="https://www.google.com/maps/search/?api=1&query=Yanaka+Ginza+Tokyo" target="_blank" rel="noopener noreferrer">🏘️ <span>Yanaka Ginza</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Yanaka+Tokyo" target="_blank" rel="noopener noreferrer">🏮 <span>Barrio de Yanaka</span><b>↗</b></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Yanaka+temples+Tokyo" target="_blank" rel="noopener noreferrer">⛩️ <span>Templos y calles tradicionales</span><b>↗</b></a>
+          </div>
+        </article>
+      </div>
     </section>
 
     
@@ -322,8 +420,25 @@
       </div>
     </section>
 <section id="notas" class="section">
-      <div class="section-title"><div><span class="eyebrow">APUNTES</span><h1>📝 Notas</h1></div></div>
+      <div class="section-title"><div><span class="eyebrow">APUNTES · TIPS Y GUÍAS</span><h1>📝 Notas y tips</h1></div></div>
       <textarea id="notes" placeholder="Escribe aquí notas del viaje..."></textarea>
+
+      <div class="travel-videos">
+        <div class="section-title travel-videos-title"><div><span class="eyebrow">VÍDEOS GUARDADOS</span><h2>🎥 Vídeos y recomendaciones</h2></div></div>
+        <div class="travel-videos-grid">
+          <article class="travel-video-card">
+            <a class="travel-video-thumb" href="https://www.youtube.com/watch?v=-Ditt7-Y7cM" target="_blank" rel="noopener noreferrer" aria-label="Abrir vídeo de tips y guía del viaje en YouTube">
+              <img src="https://i.ytimg.com/vi/-Ditt7-Y7cM/hqdefault.jpg" alt="Miniatura del vídeo de tips y guía del viaje">
+              <span class="travel-video-play">▶</span>
+            </a>
+            <div class="travel-video-info">
+              <span class="eyebrow">YOUTUBE · TIPS Y GUÍAS</span>
+              <h3>🎌 Tips y guía del viaje</h3>
+              <a class="btn primary" href="https://www.youtube.com/watch?v=-Ditt7-Y7cM" target="_blank" rel="noopener noreferrer">▶️ Ver vídeo</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 </div>
