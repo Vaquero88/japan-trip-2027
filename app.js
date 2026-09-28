@@ -76,8 +76,53 @@ function init(){
       {icon:"🚌",type:"BUS TOBU",title:"Kegon Falls → Tobu-Nikko",route:"Tobu Bus",text:"Después de visitar Kegon Falls, volver en autobús a Tobu-Nikko Station.",details:["⏱️ ~50 min","🎟️ Sin reserva","💳 Nikko Pass si finalmente lo compráis"],maps:true},
       {icon:"🚆",type:"LIMITED EXPRESS · RESERVAR",title:"Tobu-Nikko → Asakusa",route:"Tobu Railway · Limited Express",text:"Regreso a Asakusa con el Limited Express reservado.",details:["💺 Asiento reservado","🎟️ Tarifa normal + suplemento Limited Express","📌 Reservar la vuelta junto con la ida"],maps:true}
     ]},
-    {date:"23 mayo",city:"Hakone",title:"🚆 Tokio → Hakone",summary:"Traslado pendiente de concretar hasta Fukuzumiro",items:[
-      {icon:"🚆",type:"PENDIENTE",title:"Yanaka → Fukuzumiro",route:"Tokio → Hakone",text:"El itinerario indica traslado a Hakone, pero todavía no hemos definido aquí el tren concreto, precio ni reserva.",details:["🏨 Destino: Fukuzumiro · Tounosawa, Hakone","📅 23 mayo 2027","🔎 Falta concretar ruta, horarios, reserva y coste"]}
+    {date:"23 mayo",city:"Hakone",title:"🚆 Tokio → Hakone · Fukuzumiro",summary:"JR hasta Odawara · tren Hakone Tozan · llegada con margen para pasear y hacer check-in",items:[
+      {icon:"🚆",type:"JR · YAMANOTE",title:"Nippori → Tokyo Station",route:"JR Yamanote Line",text:"Desde Nippori, ir en la línea JR Yamanote hasta Tokyo Station para enlazar con el Tokaido Shinkansen.",details:["⏱️ ~12 min","🎟️ Sin reserva","💳 Suica / PASMO"],maps:true},
+      {icon:"🚄",type:"TŌKAIDŌ SHINKANSEN",title:"Tokyo → Odawara",route:"Shinkansen hacia Odawara",text:"Tomar un Shinkansen que pare en Odawara. La duración y el servicio concreto se confirmarán cuando publiquen los horarios de mayo de 2027.",details:["⏱️ Aproximadamente 45 min, según servicio","💺 Asiento reservado recomendable para cuatro","🎟️ Billete aparte del Hakone Freepass"],note:"💡 Como alternativa, podéis ir desde Shinjuku en el Romancecar directo a Hakone-Yumoto; tarda alrededor de 1 h 30 min y tiene asientos reservados. Compararemos ambas opciones al cerrar horarios y precio.",maps:true},
+      {icon:"🚃",type:"HAKONE TOZAN",title:"Odawara → Hakone-Yumoto",route:"Hakone Tozan Railway",text:"Desde Odawara, continuar en tren hasta Hakone-Yumoto. Desde allí, seguir a Fukuzumiro en el transporte local o en el minibús del alojamiento.",details:["⏱️ ~15 min hasta Hakone-Yumoto","🎟️ Sin reserva","🏨 Fukuzumiro · Tounosawa 74"],maps:true},
+      {icon:"🚶",type:"ÚLTIMO TRAMO",title:"Hakone-Yumoto → Fukuzumiro",route:"Tounosawa",text:"El ryokan ofrece un minibús desde Hakone-Yumoto hacia Tounosawa o podéis coordinar taxi/otro transporte local. También acepta equipaje antes del check-in.",details:["🚌 Minibús del alojamiento: actualmente 200 ¥","🕐 Horarios publicados ahora: 09:08, 11:15 y 16:45; confirmar antes del viaje","🧳 Fukuzumiro acepta equipaje antes del check-in"],maps:true}
+    ]},
+    {date:"24 mayo",city:"Kioto",title:"🚄 Hakone → Kioto",summary:"Hakone-Yumoto → Odawara → Kioto · llegada y tarde libre",items:[
+      {icon:"🚶",type:"SALIDA DEL RYOKAN",title:"Fukuzumiro → Hakone-Yumoto",route:"Tounosawa → Hakone-Yumoto",text:"Después del desayuno y el check-out, bajar a Hakone-Yumoto en el minibús del ryokan, taxi o transporte local y continuar a Odawara. El equipaje se puede enviar por adelantado a Kioto o llevarlo con vosotros; lo concretaremos más adelante.",details:["🏨 Check-out antes de las 10:00","🚌 Minibús del ryokan: tarifa y servicio vigentes por confirmar para 2027","🕐 Mañana flexible en Yumoto si salís con tiempo"],maps:true},
+      {icon:"🚃",type:"HAKONE TOZAN",title:"Hakone-Yumoto → Odawara",route:"Hakone Tozan Railway",text:"Tomar el tren local desde Hakone-Yumoto hasta Odawara y enlazar allí con el Shinkansen a Kioto.",details:["⏱️ ~15 min","🎟️ Sin reserva"],maps:true},
+      {icon:"🚄",type:"TŌKAIDŌ SHINKANSEN",title:"Odawara → Kyoto Station",route:"Tokaido Shinkansen",text:"Desde Odawara, tomar el Shinkansen hacia Kyoto. Al llegar, traslado al alojamiento en Minami-ku y check-in desde las 16:00.",details:["⏱️ Aproximadamente 2 h–2 h 20 min, según servicio","💺 Asiento reservado recomendable para cuatro","📅 Horario exacto por confirmar para mayo de 2027","🌆 Tarde libre y cena tranquila cerca del alojamiento"],maps:true},
+      {icon:"🚇",type:"METRO KARASUMA LINE",title:"Kyoto Station → alojamiento de Kioto",route:"Kyoto → Kujo · Minami-ku",text:"Desde Kyoto Station, tomar Karasuma Line una parada hasta Kujo Station y caminar al alojamiento de Minami-ku. Si lleváis maletas grandes, un taxi puede ser más cómodo.",details:["🏨 Check-in disponible desde las 16:00","🧳 Si llegáis antes, preguntar por consigna o dejar el equipaje"],maps:true},
+      {icon:"🚆",type:"METRO + PASEO A PIE",title:"Kioto · alojamiento → Gion y Pontocho",route:"Kujo → Gion → Pontocho → Kujo",text:"Desde Kujo, ir en metro/bus o taxi hacia Gion. Yasaka-jinja, Hanamikoji, el río Kamo y Pontocho se recorren a pie. Volver al alojamiento en transporte urbano o taxi según la hora.",details:["🚶 Recorrido Gion–Pontocho: principalmente a pie","🚌 Consultar ruta y paradas en Maps el mismo día","🌙 Si el transporte urbano ya terminó, usar taxi autorizado"],maps:true}
+    ]},
+    {date:"25 mayo",city:"Kioto",title:"⛩️ Kujo → Fushimi Inari → Higashiyama",summary:"Metro/JR + Keihan · trayectos locales con IC · sin reserva",items:[
+      {icon:"🚇",type:"METRO + JR NARA LINE",title:"Alojamiento → Fushimi Inari",route:"Kujo → Kyoto Station → Inari",text:"Desde el alojamiento, caminar a Kujo Station y tomar la Karasuma Line una parada hasta Kyoto Station. Cambiar a JR Nara Line y bajar en Inari Station, junto a la entrada del santuario.",details:["⏱️ Aproximadamente 20–30 min puerta a puerta","🎟️ Billetes locales o Suica/PASMO/ICOCA","🔁 En Kyoto Station seguir los carteles JR Nara Line","🚶 La estación JR Inari queda frente al acceso principal"],maps:true},
+      {icon:"🚆",type:"JR + KEIHAN",title:"Fushimi Inari → Kiyomizu-dera",route:"Inari → Tofukuji → Kiyomizu-Gojo",text:"Volver en JR Nara Line de Inari a Tofukuji y cambiar a Keihan Main Line hasta Kiyomizu-Gojo. Desde la estación hay que subir andando hasta el templo; también podéis tomar un bus local si preferís reducir la cuesta.",details:["⏱️ 30–45 min más la caminata en cuesta","🎟️ Sin reserva · IC card o billetes separados","🚶 Desde Kiyomizu-Gojo al templo: unos 20–25 min a pie cuesta arriba"],maps:true},
+      {icon:"🚌",type:"A PIE / BUS LOCAL",title:"Higashiyama → Gion → alojamiento",route:"Sannenzaka · Ninenzaka · Yasaka · Kujo",text:"Hacer a pie el recorrido por Sannenzaka, Ninenzaka, Yasaka-no-tō y Maruyama Park. Desde Gion regresar a Kujo en bus urbano o taxi; consultar el destino del bus en la parada y usar IC card.",details:["🚶 El tramo turístico se disfruta mejor a pie","🚌 Bus urbano: tarifa y línea según la parada más cercana","🧭 Consultar Maps el mismo día por desvíos y tráfico"],maps:true}
+    ]},
+    {date:"26 mayo",city:"Kioto",title:"🎋 Kioto ↔ Arashiyama",summary:"Metro + JR Sagano Line · paseo a pie en Arashiyama",items:[
+      {icon:"🚇",type:"METRO KARASUMA + JR SAGANO",title:"Kujo → Saga-Arashiyama",route:"Kujo → Kyoto Station → Saga-Arashiyama",text:"Caminar desde el alojamiento a Kujo Station y tomar la Karasuma Line una parada hasta Kyoto Station. Cambiar a JR Sagano Line (también llamada San-in Line) y bajar en Saga-Arashiyama.",details:["⏱️ Aproximadamente 35–45 min desde el alojamiento","🎟️ Sin reserva · IC card o billetes locales","📍 Saga-Arashiyama queda a pocos minutos andando del bosque y Tenryū-ji"],maps:true},
+      {icon:"🚶",type:"A PIE",title:"Movimientos dentro de Arashiyama",route:"Bosque de bambú → Tenryū-ji → Togetsukyō",text:"Recorrer a pie el bosque, Tenryū-ji, el centro de Arashiyama y el puente Togetsukyō. No hace falta transporte local entre estos puntos.",details:["👟 Calzado cómodo","🕐 Reservar tiempo para las visitas interiores y jardines"],maps:true},
+      {icon:"🚆",type:"JR SAGANO + METRO",title:"Saga-Arashiyama → Kujo",route:"Saga-Arashiyama → Kyoto Station → Kujo",text:"Volver en JR Sagano Line hasta Kyoto Station y enlazar con una parada de metro Karasuma Line hasta Kujo; completar el trayecto a pie al alojamiento.",details:["⏱️ Aproximadamente 35–45 min","🎟️ Sin reserva · IC card o billetes locales","⚠️ Revisar el último tren si alargáis la tarde"],maps:true}
+    ]},
+    {date:"27 mayo",city:"Nara",title:"🦌 Kioto ↔ Nara · excursión de día",summary:"JR Nara Line · recorrido principal a pie · vuelta a Kioto",items:[
+      {icon:"🚇",type:"METRO + JR NARA LINE",title:"Kujo → JR Nara Station",route:"Kujo → Kyoto Station → Nara",text:"Caminar a Kujo Station, tomar la Karasuma Line una parada hasta Kyoto Station y cambiar a JR Nara Line. Elegid un tren rápido Miyakoji cuando el horario lo permita; los servicios locales tardan más.",details:["⏱️ Tren rápido: alrededor de 45 min desde Kyoto Station; añadir acceso al metro y esperas","🎟️ Sin reserva · IC card válida en los servicios compatibles","📍 Desde JR Nara Station al parque hay unos 20 min andando","🚌 Bus local opcional desde la estación si queréis ahorrar caminata"],maps:true},
+      {icon:"🚶",type:"A PIE · NARA PARK",title:"Nara Park → Tōdaiji → Kasuga Taisha → Kōfuku-ji → Naramachi",route:"Ruta peatonal en el orden del itinerario",text:"La ruta principal se hace a pie por el parque y sus caminos. Podéis tomar un bus local entre la zona de Kasuga y el centro si las piernas lo agradecen; comprobad paradas y horario allí.",details:["👟 Jornada larga: llevar agua y calzado cómodo","🦌 Respetar las indicaciones junto a los ciervos","🚌 Bus opcional, pago con IC o billete según servicio"],maps:true},
+      {icon:"🚆",type:"JR NARA LINE + METRO",title:"JR Nara Station → Kioto",route:"Nara → Kyoto Station → Kujo",text:"Regresar desde JR Nara en JR Nara Line hasta Kyoto Station y enlazar con Karasuma Line hasta Kujo. Si termináis cerca de Kintetsu-Nara, caminad hasta JR Nara o revisad el tren Kintetsu hacia Kyoto antes de elegir.",details:["⏱️ Contar aproximadamente 50–70 min más esperas y enlace","🎟️ Sin reserva · IC card o billete","🕐 No apurar el último servicio; consultar el horario de vuelta al llegar"],maps:true}
+    ]},
+    {date:"28 mayo",city:"Kioto",title:"✨ Kinkaku-ji → Ginkaku-ji → Camino del Filósofo",summary:"Autobús/metro entre zonas · a pie en el este de Kioto",items:[
+      {icon:"🚌",type:"METRO + BUS URBANO",title:"Kujo → Kinkaku-ji",route:"Kujo → Kyoto Station → Kinkakuji-michi",text:"Desde Kujo, ir en Karasuma Line a Kyoto Station y tomar un bus urbano hacia Kinkaku-ji, o usar la ruta que indique Maps ese día. Bajar en Kinkakuji-michi y caminar hasta la entrada.",details:["⏱️ Aproximadamente 45–60 min, sujeto a tráfico","🎟️ Bus/metro con IC card o billetes; no se reserva","⚠️ El bus puede ir lento en hora punta; salir con margen"],maps:true},
+      {icon:"🚌",type:"BUS URBANO",title:"Kinkaku-ji → Ginkaku-ji",route:"Norte de Kioto → norte de Higashiyama",text:"Cruzar la ciudad en bus urbano siguiendo la ruta en tiempo real de Maps. Si hay tráfico, comparar una combinación de metro y bus. Bajar cerca de Ginkaku-michi y caminar al templo.",details:["⏱️ Aproximadamente 45–60 min, puede variar bastante","🎟️ Sin reserva · IC card","🧭 Confirmar línea y parada en el momento; las rutas de bus pueden cambiar"],maps:true},
+      {icon:"🚶",type:"A PIE + BUS / METRO",title:"Camino del Filósofo → alojamiento",route:"Ginkaku-ji → paseo hacia el sur → Kujo",text:"Hacer a pie el tramo deseado del Camino del Filósofo. Desde el extremo sur, tomar bus hacia Kyoto Station y enlazar con metro a Kujo, o usar taxi si estáis cansados.",details:["🚶 Camino del Filósofo: paseo peatonal","🚌 El bus de regreso depende del punto donde terminéis","💳 IC card para el transporte urbano"],maps:true}
+    ]},
+    {date:"29 mayo",city:"Osaka",title:"🚆 Kioto → Osaka · Namba y Minami",summary:"JR Special Rapid + Osaka Metro · paseos a pie en el centro",items:[
+      {icon:"🚇",type:"METRO + JR KYOTO LINE",title:"Alojamiento de Kioto → Osaka",route:"Kujo → Kyoto Station → Osaka Station → Namba",text:"Tomar Karasuma Line de Kujo a Kyoto Station; desde allí, JR Kyoto Line Special Rapid hasta Osaka Station y Osaka Metro Midosuji Line hasta Namba. Para el alojamiento en Naniwa Ward, seguir a pie desde Namba y dejar el equipaje antes del check-in si es posible.",details:["⏱️ Aproximadamente 60–75 min puerta a puerta","🎟️ Trenes frecuentes, sin reserva · IC card","🧳 Check-out de Kioto antes de las 10:00; check-in Osaka desde las 16:00"],maps:true},
+      {icon:"🚶",type:"A PIE",title:"Namba · Shinsaibashi · Hozenji · Dotonbori",route:"Recorrido por Minami",text:"Shinsaibashi-suji, Hozenji Yokocho, Dotonbori y Namba están en la misma zona y se enlazan cómodamente a pie. Al final, volver andando al alojamiento.",details:["🚶 No hace falta metro entre estas visitas","🧭 Si lleváis equipaje, podéis dejarlo primero en consigna o preguntar al alojamiento"],maps:true}
+    ]},
+    {date:"30 mayo",city:"Osaka",title:"🎢 USJ o Osaka tradicional · transporte según alternativa",summary:"Elegid A o B; ambos planes ocupan el día y no se combinan",items:[
+      {icon:"🚇",type:"OPCIÓN A · OSAKA METRO + JR YUMESAKI",title:"Namba → Universal Studios Japan",route:"Namba → Umeda/Osaka → Nishikujo → Universal City",text:"Desde Osaka Metro Namba, tomar Midosuji Line hasta Umeda y caminar a JR Osaka Station. Coger Osaka Loop Line hasta Nishikujo y enlazar con JR Yumesaki Line hasta Universal City. Regresar por la misma ruta.",details:["⏱️ Aproximadamente 35–50 min por sentido más enlaces","🎟️ IC card para trenes; entrada de USJ se compra aparte","🎢 Revisar apertura, entradas y posibles Express Pass cerca de la fecha","📌 Salir temprano y confirmar la ruta del día en Maps"],maps:true},
+      {icon:"🚇",type:"OPCIÓN B · METRO + CAMINATA",title:"Namba → Osaka Castle",route:"Osaka Metro hasta Tanimachi 4-chome",text:"Usar Osaka Metro desde Namba con transbordo en Tanimachi 9-chome a Tanimachi Line hacia Tanimachi 4-chome. Desde allí caminar al parque y al castillo. También se puede usar JR desde Osaka-Namba con enlace distinto según el punto de entrada.",details:["⏱️ Aproximadamente 25–35 min más la caminata","🎟️ Sin reserva · IC card","🏯 Comprobar horarios de acceso al museo del castillo"],maps:true},
+      {icon:"🚶",type:"OPCIÓN B · A PIE",title:"Osaka Castle → Kuromon Market",route:"Traslado en metro/taxi al mercado",text:"Al terminar el castillo, tomar metro o taxi hasta Namba/Nipponbashi y caminar a Kuromon Market para almorzar. El mercado puede cerrar algunos puestos por la tarde.",details:["⏱️ Aproximadamente 25–40 min según tráfico y enlaces","🍣 Ir a mediodía para encontrar más puestos abiertos","💳 IC card en metro"],maps:true},
+      {icon:"🚶",type:"OPCIÓN B · A PIE",title:"Kuromon → Den Den Town → Shinsekai",route:"Nipponbashi → Ebisucho / Shinsekai",text:"Caminar desde Kuromon hacia Den Den Town por Nipponbashi. Después continuar a pie hacia Shinsekai y Tsūtenkaku; usar metro una parada si preferís ahorrar pasos.",details:["🚶 Los barrios quedan próximos entre sí","🌃 Terminar con cena en Shinsekai","🔁 Regreso a Namba en metro o caminando según energía"],maps:true}
+    ]},
+    {date:"31 mayo",city:"Osaka → España",title:"✈️ Namba → KIX → Pekín → Madrid",summary:"Salida temprano para el vuelo CA162 de las 09:05 · llegada al aeropuerto con margen",items:[
+      {icon:"🚶",type:"ACCESO A LA ESTACIÓN",title:"Alojamiento → Nankai Namba",route:"Naniwa Ward → Nankai Namba Station",text:"Salir del alojamiento con equipaje y caminar a la estación Nankai Namba. Llegar a la estación con tiempo para localizar el acceso de la línea de aeropuerto y comprar/asignar el billete.",details:["🕐 Objetivo: estar en Nankai Namba sobre las 05:00–05:10","🧳 Check-out antes de las 11:00 según reserva; dejar el alojamiento antes por el vuelo","📍 Confirmar el recorrido a pie desde la dirección exacta y el acceso más cercano"],maps:true},
+      {icon:"🚆",type:"NANKAI AIRPORT EXPRESS / RAP:I:T",title:"Nankai Namba → Kansai International Airport",route:"Nankai Main Line · Airport Express o Limited Express Rapi:t",text:"Tomar Airport Express (sin reserva) o el Limited Express Rapi:t (asiento asignado, suplemento). El horario actualmente publicado por Nankai incluye un Airport Express de las 05:15 que llega a KIX alrededor de las 05:58–05:59; sirve como referencia, pero hay que reconfirmarlo para el 31/05/2027.",details:["⏱️ Airport Express: alrededor de 43–45 min; Rapi:t: desde unos 34 min","💺 Rapi:t requiere billete/suplemento y asiento asignado","🎟️ Airport Express no necesita reserva; pagar con IC o billete","🎯 Objetivo de llegada a KIX: aproximadamente 06:00, casi 3 h antes del vuelo"],note:"⚠️ Si el primer tren de 2027 no permite llegar con el margen deseado, reservar taxi/transfer nocturno con antelación. No dependáis de horarios actuales para el día del viaje.",maps:true},
+      {icon:"✈️",type:"VUELO INTERNACIONAL",title:"KIX → Pekín → Madrid",route:"Air China CA162 · conexión con CA897",text:"En Kansai International Airport, localizar el mostrador de Air China, facturar hasta Madrid si la reserva lo permite y confirmar en el aeropuerto si el equipaje se etiqueta hasta destino. Seguir indicaciones de salida y conexión en Pekín.",details:["🕘 CA162: salida prevista 09:05 desde KIX; llegar con margen para facturación y controles","🛫 Conexión en Pekín al vuelo CA897 · revisar terminal, puerta y requisitos con Air China","🛂 Seguir señalización de conexiones internacionales y confirmar equipaje etiquetado hasta MAD"]}
     ]}
   ];
 
@@ -106,7 +151,36 @@ function init(){
     "Chuzenji → Kegon Falls": ["Chuzenji Onsen Bus Stop, Nikko, Tochigi, Japan", "Kegon Falls, Nikko, Tochigi, Japan"],
     "Kegon Falls → Tobu-Nikko": ["Kegon Falls, Nikko, Tochigi, Japan", "Tobu-Nikko Station · 4-3 Matsubaracho, Nikko, Tochigi, Japan"],
     "Tobu-Nikko → Asakusa": ["Tobu-Nikko Station · 4-3 Matsubaracho, Nikko, Tochigi, Japan", "Tobu Asakusa Station · 1-4-1 Hanakawado, Taito City, Tokyo, Japan"],
-    "Traslado Yanaka → Fukuzumiro": ["Yanaka, Taito City, Tokyo", "Fukuzumiro, Tounosawa, Hakone"]
+    "Traslado Yanaka → Fukuzumiro": ["Yanaka, Taito City, Tokyo", "Fukuzumiro, Tounosawa, Hakone"],
+    "Nippori → Tokyo Station": ["Nippori Station, Tokyo", "Tokyo Station, Tokyo"],
+    "Tokyo → Odawara": ["Tokyo Station, Tokyo", "Odawara Station, Kanagawa, Japan"],
+    "Odawara → Hakone-Yumoto": ["Odawara Station, Kanagawa, Japan", "Hakone-Yumoto Station, Hakone, Japan"],
+    "Hakone-Yumoto → Fukuzumiro": ["Hakone-Yumoto Station, Hakone, Japan", "Fukuzumiro, Tounosawa 74, Hakone, Japan"],
+    "Fukuzumiro → Hakone-Yumoto": ["Fukuzumiro, Tounosawa 74, Hakone, Japan", "Hakone-Yumoto Station, Hakone, Japan"],
+    "Hakone-Yumoto → Odawara": ["Hakone-Yumoto Station, Hakone, Japan", "Odawara Station, Kanagawa, Japan"],
+    "Odawara → Kyoto Station": ["Odawara Station, Kanagawa, Japan", "Kyoto Station, Kyoto, Japan"],
+    "Kyoto Station → alojamiento de Kioto": ["Kyoto Station, Kyoto, Japan", "Kujo Station, Kyoto, Japan"],
+    "Kioto · alojamiento → Gion y Pontocho": ["Kujo Station, Kyoto, Japan", "Pontocho Alley, Kyoto, Japan"],
+    "Alojamiento → Fushimi Inari": ["Kujo Station, Kyoto, Japan", "Inari Station, Kyoto, Japan"],
+    "Fushimi Inari → Kiyomizu-dera": ["Inari Station, Kyoto, Japan", "Kiyomizu-Gojo Station, Kyoto, Japan"],
+    "Higashiyama → Gion → alojamiento": ["Yasaka Shrine, Kyoto, Japan", "Kujo Station, Kyoto, Japan"],
+    "Kujo → Saga-Arashiyama": ["Kujo Station, Kyoto, Japan", "Saga-Arashiyama Station, Kyoto, Japan"],
+    "Movimientos dentro de Arashiyama": ["Arashiyama Bamboo Forest, Kyoto, Japan", "Togetsukyo Bridge, Kyoto, Japan"],
+    "Saga-Arashiyama → Kujo": ["Saga-Arashiyama Station, Kyoto, Japan", "Kujo Station, Kyoto, Japan"],
+    "Kujo → JR Nara Station": ["Kujo Station, Kyoto, Japan", "JR Nara Station, Nara, Japan"],
+    "Nara Park → Tōdaiji → Kasuga Taisha → Kōfuku-ji → Naramachi": ["Nara Park, Nara, Japan", "Naramachi, Nara, Japan"],
+    "JR Nara Station → Kioto": ["JR Nara Station, Nara, Japan", "Kujo Station, Kyoto, Japan"],
+    "Kujo → Kinkaku-ji": ["Kujo Station, Kyoto, Japan", "Kinkaku-ji, Kyoto, Japan"],
+    "Kinkaku-ji → Ginkaku-ji": ["Kinkaku-ji, Kyoto, Japan", "Ginkaku-ji, Kyoto, Japan"],
+    "Camino del Filósofo → alojamiento": ["Philosopher's Path, Kyoto, Japan", "Kujo Station, Kyoto, Japan"],
+    "Alojamiento de Kioto → Osaka": ["Kujo Station, Kyoto, Japan", "Namba Station, Osaka, Japan"],
+    "Namba · Shinsaibashi · Hozenji · Dotonbori": ["Shinsaibashi-suji Shopping Street, Osaka, Japan", "Dotonbori, Osaka, Japan"],
+    "Namba → Universal Studios Japan": ["Namba Station, Osaka, Japan", "Universal City Station, Osaka, Japan"],
+    "Namba → Osaka Castle": ["Namba Station, Osaka, Japan", "Tanimachi 4-chome Station, Osaka, Japan"],
+    "Osaka Castle → Kuromon Market": ["Osaka Castle, Osaka, Japan", "Kuromon Ichiba Market, Osaka, Japan"],
+    "Kuromon → Den Den Town → Shinsekai": ["Kuromon Ichiba Market, Osaka, Japan", "Shinsekai, Osaka, Japan"],
+    "Alojamiento → Nankai Namba": ["3 Chome-12-21 Nambanaka, Naniwa Ward, Osaka, Japan", "Nankai Namba Station, Osaka, Japan"],
+    "Nankai Namba → Kansai International Airport": ["Nankai Namba Station, Osaka, Japan", "Kansai International Airport, Osaka, Japan"]
   };
   function mapsUrl(place){ return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`; }
   function mapsButtons(t){
@@ -208,19 +282,136 @@ function init(){
     },
     "22": {
       title:"Excursión a Nikko",
-      intro:"Día de excursión desde Tokio. Se aprovecha la mañana para la zona histórica y por la tarde se intenta llegar al Lago Chuzenji y Kegon Falls.",
+      intro:"Excursión de día desde Tokio. La prioridad es disfrutar sin prisas de Tōshō-gū y Shinkyō; la subida al lago Chūzenji y a Kegon queda como opción si el tiempo y las energías acompañan.",
       stops:[
         {time:"06:30 aprox.",icon:"🚆",type:"TRASLADO",title:"Salida de Yanaka",text:"Salir temprano del alojamiento para comenzar el viaje a Nikko."},
         {time:"08:30–09:00",icon:"📍",type:"LLEGADA",title:"Nikko",text:"Llegada aproximada a Nikko y comienzo de la visita."},
-        {time:"09:00–12:00",icon:"⛩️",type:"TEMPLOS + ZONA HISTÓRICA",title:"Toshogu + zona histórica",text:"Visitar Toshogu y, según el tiempo disponible, Rinnoji y/o Futarasan. Completar con Shinkyo y el entorno histórico de Nikko.",tags:["Toshogu","Rinnoji","Futarasan","Shinkyo"]},
-        {time:"12:00–13:00",icon:"🍜",type:"COMIDA",title:"Comida en Nikko",text:"Parada para comer antes de continuar hacia la zona del lago."},
-        {time:"13:00",icon:"🚌",type:"TRASLADO",title:"Bus hacia Chuzenji",text:"Tomar el autobús hacia la zona del Lago Chuzenji."},
-        {time:"14:00",icon:"🌊",type:"NATURALEZA",title:"Lago Chuzenji",text:"Paseo y tiempo para disfrutar del lago y del paisaje de montaña."},
-        {time:"15:00",icon:"💦",type:"NATURALEZA",title:"Kegon Falls",text:"Visitar la cascada de Kegon Falls."},
-        {time:"16:00",icon:"🚆",type:"REGRESO",title:"Comienzo del regreso",text:"Empezar el regreso hacia Tokio para llegar aproximadamente entre las 18:30 y las 19:30."},
+        {time:"09:00–12:00",icon:"⛩️",type:"TEMPLOS + ZONA HISTÓRICA",title:"Tōshō-gū y Shinkyō",text:"Dedicar la mañana al santuario Tōshō-gū y al puente Shinkyō. Si queda tiempo y apetece, añadir solo Rinnō-ji o Futarasan, sin intentar recorrer todos los recintos.",tags:["Tōshō-gū · imprescindible","Shinkyō","Rinnō-ji o Futarasan · opcional"]},
+        {time:"12:00–13:00",icon:"🍜",type:"COMIDA",title:"Comida en Nikko",text:"Parada tranquila para comer algo local, como yuba, antes de decidir si subir a la zona del lago."},
+        {time:"13:00 aprox. · opcional",icon:"🚌",type:"TRASLADO",title:"Bus hacia Chuzenji Onsen",text:"Si los horarios y las energías acompañan, tomar el autobús a Chuzenji Onsen. El trayecto suele rondar los 50 minutos por sentido; si no, quedaros en la zona histórica y regresad con más margen."},
+        {time:"14:00–15:15 · opcional",icon:"🌊",type:"NATURALEZA",title:"Kegon Falls + lago Chuzenji",text:"Ver la cascada Kegon y dar un paseo corto junto al lago, sin añadir más paradas de montaña."},
+        {time:"15:15–16:15 aprox.",icon:"🚌",type:"REGRESO A LA ESTACIÓN",title:"Chuzenji Onsen → Tobu-Nikko",text:"Bajar en autobús hacia Tobu-Nikko. Dejar margen por posibles colas o tráfico en la carretera de montaña."},
+        {time:"16:30 aprox. · según reserva",icon:"🚆",type:"REGRESO",title:"Limited Express a Tokio",text:"Tomar el tren reservado de vuelta. La llegada a Tokio se estima entre las 18:30 y las 19:30, según el servicio elegido."},
         {time:"19:30 aprox.",icon:"🍜",type:"NOCHE",title:"Tokio",text:"Cena tranquila y dormir después de la excursión."}
       ],
-      note:"🗻 Es un día largo: conviene llevar calzado cómodo y reservar margen para los desplazamientos y los horarios de transporte."
+      note:"🗻 El día ya es largo por los trayectos. La prioridad es Tōshō-gū + Shinkyō; el lago y Kegon son opcionales. Confirmar horarios de tren y autobús antes del viaje, porque mayo de 2027 aún puede tener cambios."
+    },
+    "23": {
+      title:"Tokio → Hakone · paseo local y tarde en Fukuzumiro",
+      intro:"Traslado desde Yanaka a Hakone. La idea es llegar con margen, conocer un poco Hakone-Yumoto/Tōnosawa y reservar la tarde para el ryokan, el onsen y la cena.",
+      stops:[
+        {time:"08:00–10:30 aprox.",icon:"🚆",type:"TRASLADO",title:"Yanaka → Hakone-Yumoto",text:"Ir desde Nippori a Tokyo Station, continuar en Tokaido Shinkansen hasta Odawara y enlazar con el tren Hakone Tozan a Hakone-Yumoto. El servicio exacto se definirá al publicarse los horarios de mayo de 2027.",tags:["JR Yamanote","Shinkansen","Hakone Tozan"]},
+        {time:"10:30–11:00",icon:"🏨",type:"LLEGADA",title:"Fukuzumiro · Tōnosawa",text:"Llegar al alojamiento y, si lo necesitáis, dejar las maletas antes del check-in. El ryokan acepta equipaje antes de entrar; el plan no depende de llevarlas o enviarlas."},
+        {time:"11:00–13:30",icon:"🚶",type:"PASEO SUAVE",title:"Hakone-Yumoto + cascada Tamadare",text:"Pasear por la zona de Hakone-Yumoto y Tōnosawa. Si os apetece, acercaros a la cascada Tamadare y al santuario junto a ella; haced una versión corta del paseo para llegar descansados al ryokan.",tags:["Cascada Tamadare","Tōnosawa","Calles de Hakone-Yumoto"]},
+        {time:"13:30–14:30",icon:"🍜",type:"COMIDA",title:"Comida tranquila",text:"Comer por Hakone-Yumoto o cerca del alojamiento y volver a Fukuzumiro con tiempo."},
+        {time:"15:00–18:00",icon:"♨️",type:"RYOKAN",title:"Check-in, onsen y descanso",text:"Hacer el check-in desde las 15:00, instalaros y disfrutar del onsen. El ryokan pide llegar antes de las 18:00 si tenéis cena incluida."},
+        {time:"18:00",icon:"🍱",type:"CENA INCLUIDA",title:"Cena en Fukuzumiro",text:"Cena kaiseki del ryokan. La sirven en la habitación habitualmente; al tener dos habitaciones reservadas, conviene confirmar si la comida será en las habitaciones o en una sala común."},
+        {time:"Después de cenar",icon:"♨️",type:"DESCANSO",title:"Segundo baño y noche tranquila",text:"Si os apetece, daros otro baño y descansar en el ryokan. No hace falta añadir más visitas este día."}
+      ],
+      note:"🌿 La visita de este día se mantiene cerca del alojamiento para que la tarde de onsen y la cena sean relajadas. Horarios aproximados; confirmar los trenes al acercarse el viaje."
+    },
+    "24": {
+      title:"Hakone → Kioto · Gion y Pontocho",
+      intro:"Salida por la mañana para llegar a Kioto con tiempo, dejar el equipaje y conocer Gion y Pontocho por la tarde-noche.",
+      stops:[
+        {time:"07:30–08:15",icon:"🍱",type:"DESAYUNO + CHECK-OUT",title:"Fukuzumiro",text:"Desayuno en el ryokan y salida antes de las 10:00. Bajar a Hakone-Yumoto y continuar a Odawara; el equipaje puede viajar con vosotros o enviarse al alojamiento."},
+        {time:"08:30–11:00 aprox.",icon:"🚄",type:"TRASLADO",title:"Hakone-Yumoto → Odawara → Kioto",text:"Tren local hasta Odawara y Tokaido Shinkansen a Kyoto Station. Horario orientativo; confirmar los servicios cuando se publiquen los de mayo de 2027."},
+        {time:"11:30–12:30",icon:"🏠",type:"LLEGADA",title:"Kyoto Station y equipaje",text:"Traslado al alojamiento de Minami-ku. Si la habitación aún no está disponible, dejar las maletas y comenzar la visita; check-in desde las 16:00."},
+        {time:"12:30–14:00",icon:"🍜",type:"COMIDA",title:"Almuerzo y traslado a Gion",text:"Comer por Kyoto Station o Gion y desplazarse al distrito histórico."},
+        {time:"14:00–17:30",icon:"🏮",type:"BARRIO HISTÓRICO",title:"Gion · Yasaka-jinja · Hanamikoji",text:"Pasear por Gion, visitar Yasaka-jinja y recorrer Hanamikoji con respeto por las calles residenciales y las normas locales."},
+        {time:"17:30–19:00",icon:"🌉",type:"PASEO",title:"Río Kamo y Pontocho",text:"Caminar hacia el río Kamo y recorrer el estrecho callejón de Pontocho."},
+        {time:"19:00–21:00",icon:"🍜",type:"CENA",title:"Cena en Pontocho o Gion",text:"Cena en la zona y regreso al alojamiento. Si el viaje se retrasa, acortar Gion y conservar la cena tranquila."}
+      ],
+      note:"🚄 Las horas de tren son aproximadas y dependen del horario de 2027. Día de traslado con una tarde de visitas compacta."
+    },
+    "25": {
+      title:"Fushimi Inari + Kiyomizu-dera · Higashiyama",
+      intro:"Madrugar para visitar Fushimi Inari antes de las mayores aglomeraciones y dedicar la tarde a pie a Higashiyama.",
+      stops:[
+        {time:"06:30–09:00",icon:"⛩️",type:"SANTUARIO",title:"Fushimi Inari Taisha",text:"Llegar temprano y recorrer el santuario y el tramo de torii que os apetezca. No es necesario subir hasta la cima para disfrutar de la visita."},
+        {time:"09:00–10:00",icon:"🚆",type:"TRASLADO",title:"Fushimi → Higashiyama",text:"Desplazamiento en tren y transporte local hacia Kiyomizu-dera."},
+        {time:"10:00–12:30",icon:"🏯",type:"TEMPLO",title:"Kiyomizu-dera",text:"Visitar el templo y sus miradores; prever tiempo para colas y caminatas en cuesta."},
+        {time:"12:30–13:30",icon:"🍜",type:"COMIDA",title:"Almuerzo en Higashiyama",text:"Pausa para comer por la zona histórica."},
+        {time:"13:30–16:30",icon:"🏘️",type:"PASEO HISTÓRICO",title:"Sannenzaka · Ninenzaka · Yasaka-no-tō",text:"Bajar a ritmo tranquilo por las calles tradicionales y visitar Yasaka-no-tō desde el exterior si encaja."},
+        {time:"16:30–18:00",icon:"🌳",type:"PARQUE",title:"Maruyama Park y Yasaka-jinja",text:"Paseo por el parque y visita al santuario si quedó pendiente el día anterior."},
+        {time:"Desde las 18:00",icon:"🌙",type:"TARDE LIBRE",title:"Gion o regreso al alojamiento",text:"Cena por la zona o vuelta para descansar después de un día con bastante caminata."}
+      ],
+      note:"👟 Día de muchas cuestas y escalones. El orden empieza temprano en Fushimi y continúa hacia Higashiyama."
+    },
+    "26": {
+      title:"Arashiyama · bosque de bambú y Tenryū-ji",
+      intro:"Jornada centrada en el oeste de Kioto, con tiempo para el templo, el bosque y el paseo junto al río.",
+      stops:[
+        {time:"08:00–09:00",icon:"🚆",type:"TRASLADO",title:"Kioto → Arashiyama",text:"Salir por la mañana hacia la estación Saga-Arashiyama o Arashiyama, según la ruta elegida."},
+        {time:"09:00–10:00",icon:"🎋",type:"PASEO",title:"Bosque de bambú",text:"Recorrer el sendero del bosque temprano y continuar hacia el templo."},
+        {time:"10:00–12:00",icon:"🏯",type:"TEMPLO Y JARDÍN",title:"Tenryū-ji",text:"Visitar el templo y su jardín paisajístico; comprobar horarios y entrada vigentes antes del viaje."},
+        {time:"12:00–13:30",icon:"🍜",type:"COMIDA",title:"Almuerzo en Arashiyama",text:"Comer en la zona sin alejarse demasiado de la ruta a pie."},
+        {time:"13:30–15:30",icon:"🌉",type:"PASEO",title:"Puente Togetsukyō y río Katsura",text:"Paseo por el puente y las orillas del río. Parada para descansar o tomar algo."},
+        {time:"15:30–17:00",icon:"🌿",type:"TIEMPO FLEXIBLE",title:"Arashiyama a vuestro ritmo",text:"Tiendas, jardines cercanos o descanso, según energía y clima."},
+        {time:"Desde las 17:00",icon:"🚆",type:"REGRESO",title:"Vuelta a Kioto",text:"Regreso al alojamiento y tarde-noche libre."}
+      ],
+      note:"🎋 La jornada se mantiene en una sola zona para evitar cruces largos por la ciudad."
+    },
+    "27": {
+      title:"Excursión a Nara desde Kioto",
+      intro:"Recorrido a pie por los principales lugares de Nara en el orden previsto, desde el parque hasta Naramachi.",
+      stops:[
+        {time:"07:30–08:30",icon:"🚆",type:"TRASLADO",title:"Kioto → Nara",text:"Salir temprano en tren desde Kyoto Station hacia Kintetsu-Nara o JR Nara; elegir estación según los horarios y comenzar la ruta a pie."},
+        {time:"09:00–10:00",icon:"🦌",type:"PARQUE",title:"Nara Park",text:"Entrar en el parque, pasear entre los ciervos y seguir las indicaciones para interactuar con ellos con seguridad."},
+        {time:"10:00–12:00",icon:"🏯",type:"TEMPLO",title:"Tōdaiji",text:"Visitar el Daibutsuden y el recinto principal. Reservar tiempo para caminar desde el parque."},
+        {time:"12:00–13:00",icon:"🍜",type:"COMIDA",title:"Almuerzo en la zona del parque",text:"Pausa para comer y descansar antes de continuar hacia Kasuga Taisha."},
+        {time:"13:00–14:30",icon:"⛩️",type:"SANTUARIO",title:"Kasuga Taisha",text:"Recorrer el camino arbolado y visitar el santuario; ajustar la visita a los horarios de apertura de los recintos interiores."},
+        {time:"14:30–15:30",icon:"🚶",type:"PASEO",title:"Parque → Kōfuku-ji",text:"Regresar hacia el centro de Nara a pie, con una pausa si hace falta."},
+        {time:"15:30–16:30",icon:"🏯",type:"TEMPLO",title:"Kōfuku-ji",text:"Visitar el entorno del templo y la pagoda; comprobar posibles obras o cierres antes del viaje."},
+        {time:"16:30–18:00",icon:"🏘️",type:"BARRIO HISTÓRICO",title:"Naramachi",text:"Pasear por las calles históricas, tiendas y cafés de Naramachi."},
+        {time:"18:00–19:00 aprox.",icon:"🚆",type:"REGRESO",title:"Nara → Kioto",text:"Volver en tren a Kioto. El horario exacto dependerá de la estación y el servicio escogidos."}
+      ],
+      note:"🦌 Recorrido a pie con pausas y tiempos aproximados. Las aperturas de templos y santuarios se confirmarán antes del viaje."
+    },
+    "28": {
+      title:"Kinkaku-ji + Ginkaku-ji + Camino del Filósofo",
+      intro:"Dos templos separados por un traslado en transporte público; el tramo oriental se completa a pie y deja margen libre.",
+      stops:[
+        {time:"08:00–09:00",icon:"🚌",type:"TRASLADO",title:"Hacia Kinkaku-ji",text:"Salir temprano en bus o combinación de metro y bus desde el alojamiento."},
+        {time:"09:00–10:30",icon:"✨",type:"TEMPLO",title:"Kinkaku-ji · Pabellón Dorado",text:"Visitar el recinto y su recorrido circular. Llegar cerca de la apertura ayuda a evitar parte de las aglomeraciones."},
+        {time:"10:30–12:00",icon:"🚌",type:"TRASLADO",title:"Kinkaku-ji → Ginkaku-ji",text:"Cruzar la ciudad en transporte público; contar con margen para tráfico y transbordos."},
+        {time:"12:00–13:00",icon:"🍜",type:"COMIDA",title:"Almuerzo en el norte de Higashiyama",text:"Comer cerca de Ginkaku-ji antes de la visita."},
+        {time:"13:00–14:30",icon:"🏯",type:"TEMPLO",title:"Ginkaku-ji · Pabellón de Plata",text:"Recorrer el jardín y los senderos del templo."},
+        {time:"14:30–16:00",icon:"🌿",type:"PASEO",title:"Camino del Filósofo",text:"Caminar el tramo que os apetezca hacia el sur, con paradas en pequeños templos o cafés si están abiertos."},
+        {time:"Desde las 16:00",icon:"☕",type:"TIEMPO LIBRE",title:"Tarde libre en Kioto",text:"Descanso, compras o volver a una zona favorita. Cena sin horario fijado."}
+      ],
+      note:"🚌 Los templos están en zonas distintas: dejar margen para el traslado entre Kinkaku-ji y Ginkaku-ji."
+    },
+    "29": {
+      title:"Kioto → Osaka · Namba, Dotonbori y Shinsaibashi",
+      intro:"Traslado por la mañana, llegada al alojamiento y primer paseo por los barrios del centro de Osaka.",
+      stops:[
+        {time:"08:00–09:00",icon:"🏠",type:"CHECK-OUT",title:"Salida del alojamiento de Kioto",text:"Check-out antes de las 10:00. Llevar o enviar el equipaje y dirigirse a la estación."},
+        {time:"09:00–10:00 aprox.",icon:"🚆",type:"TRASLADO",title:"Kioto → Osaka",text:"Viajar en tren hacia Osaka y continuar a Namba/Naniwa Ward. El servicio concreto dependerá de la estación y ruta escogidas."},
+        {time:"10:00–12:00",icon:"🧳",type:"LLEGADA",title:"Namba y equipaje",text:"Dejar las maletas en consigna o en el alojamiento si lo permiten; el check-in está previsto desde las 16:00."},
+        {time:"12:00–13:00",icon:"🍜",type:"COMIDA",title:"Kuromon Market o Namba",text:"Almuerzo en Namba; Kuromon queda como opción cercana si aún tenéis energía y no lo visitáis al día siguiente."},
+        {time:"13:00–15:30",icon:"🛍️",type:"BARRIO",title:"Shinsaibashi-suji",text:"Pasear por la galería comercial y sus calles laterales hacia el sur."},
+        {time:"16:00–17:00",icon:"🏠",type:"ALOJAMIENTO",title:"Check-in en Osaka",text:"Instalarse en el alojamiento de Naniwa Ward y descansar un rato."},
+        {time:"17:00–18:00",icon:"⛩️",type:"TEMPLO",title:"Hozenji Yokocho y Hozenji",text:"Recorrer el callejón y acercarse al pequeño templo Hozenji."},
+        {time:"18:00–21:00",icon:"🌃",type:"PASEO + CENA",title:"Dotonbori y Namba",text:"Ver el canal y los letreros al anochecer, cenar por Dotonbori y volver caminando al alojamiento."}
+      ],
+      note:"🧳 Día de mudanza: la visita se concentra en el centro y permite ajustar el ritmo según equipaje y hora de check-in."
+    },
+    "30": {
+      title:"Osaka · elegid una de las dos alternativas",
+      intro:"Día completo: escoged Universal Studios Japan o una jornada por Osaka tradicional. Son planes alternativos, no se recomienda intentar combinarlos en el mismo día.",
+      stops:[
+        {time:"DÍA COMPLETO · OPCIÓN A",icon:"🎢",type:"UNIVERSAL STUDIOS JAPAN",title:"USJ",text:"Dedicar el día al parque. Revisar calendario, entradas, horarios y posibles pases exprés cuando se acerque la fecha. Conviene comprar entradas con antelación."},
+        {time:"08:00–09:00 · OPCIÓN B",icon:"🚆",type:"OSAKA TRADICIONAL",title:"Salida hacia Osaka Castle",text:"Desplazarse al castillo al comienzo del día para aprovechar la mañana."},
+        {time:"09:00–11:30 · OPCIÓN B",icon:"🏯",type:"CASTILLO",title:"Osaka Castle",text:"Visitar el parque y, si interesa, el museo interior. Revisar horarios y entradas antes del viaje."},
+        {time:"11:30–12:00 · OPCIÓN B",icon:"🚇",type:"TRASLADO",title:"Hacia Kuromon Market",text:"Traslado al mercado de Kuromon."},
+        {time:"12:00–13:30 · OPCIÓN B",icon:"🍣",type:"MERCADO + COMIDA",title:"Kuromon Market",text:"Probar comida local y almorzar en el mercado, atendiendo a los horarios de los puestos."},
+        {time:"13:30–14:00 · OPCIÓN B",icon:"🚶",type:"TRASLADO",title:"Kuromon → Nipponbashi",text:"Caminar hacia Den Den Town, en el área de Nipponbashi."},
+        {time:"14:00–16:30 · OPCIÓN B",icon:"🎮",type:"BARRIO",title:"Den Den Town · Nipponbashi",text:"Tiendas de electrónica, videojuegos, manga y coleccionismo."},
+        {time:"16:30–17:00 · OPCIÓN B",icon:"🚶",type:"TRASLADO",title:"Nipponbashi → Shinsekai",text:"Caminar o tomar transporte local hacia Shinsekai."},
+        {time:"17:00–20:00 · OPCIÓN B",icon:"🏮",type:"BARRIO",title:"Shinsekai y Tsūtenkaku",text:"Pasear por Shinsekai, ver Tsūtenkaku desde el exterior o subir si apetece y cenar kushikatsu."}
+      ],
+      note:"🔀 Alternativa A: USJ ocupa prácticamente todo el día. Alternativa B: Osaka Castle → Kuromon Market → Den Den Town/Nipponbashi → Shinsekai, en ese orden."
     }
   };
 
@@ -245,7 +436,21 @@ function init(){
       {label:"Ruta 1 · Yanaka → Asakusa → Tobu-Nikko", origin:"Yanaka, Taito City, Tokyo", waypoints:["Asakusa Station, Taito City, Tokyo"], destination:"Tobu-Nikko Station, Nikko", mode:"transit"},
       {label:"Ruta 2 · Tobu-Nikko → Chuzenji → Kegon Falls", origin:"Tobu-Nikko Station, Nikko", waypoints:["Chuzenji Onsen, Nikko"], destination:"Kegon Falls, Nikko", mode:"transit"},
       {label:"Regreso · Kegon Falls → Tobu-Nikko → Yanaka", origin:"Kegon Falls, Nikko", waypoints:["Tobu-Nikko Station, Nikko"], destination:"Yanaka, Taito City, Tokyo", mode:"transit"}
-    ]
+    ],
+    "23": [
+      {label:"Yanaka → Odawara → Hakone-Yumoto → Fukuzumiro", origin:"Yanaka, Taito City, Tokyo", waypoints:["Tokyo Station, Tokyo","Odawara Station, Kanagawa, Japan","Hakone-Yumoto Station, Hakone, Japan"], destination:"Fukuzumiro, Tounosawa 74, Hakone, Japan", mode:"transit"},
+      {label:"Paseo opcional · Hakone-Yumoto → cascada Tamadare", origin:"Hakone-Yumoto Station, Hakone, Japan", waypoints:["Tamadare Falls, Hakone, Japan"], destination:"Fukuzumiro, Tounosawa 74, Hakone, Japan", mode:"walking"}
+    ],
+    "24": [
+      {label:"Hakone → Kioto · traslado", origin:"Fukuzumiro, Tounosawa 74, Hakone, Japan", waypoints:["Hakone-Yumoto Station, Hakone, Japan","Odawara Station, Kanagawa, Japan"], destination:"Kyoto Station, Kyoto, Japan", mode:"transit"},
+      {label:"Kioto · Gion → Pontocho", origin:"Yasaka Shrine, Kyoto, Japan", waypoints:["Hanamikoji Street, Kyoto, Japan","Kamo River, Kyoto, Japan"], destination:"Pontocho Alley, Kyoto, Japan", mode:"walking"}
+    ],
+    "25": [{label:"Fushimi Inari → Kiyomizu-dera → Higashiyama",origin:"Fushimi Inari Taisha, Kyoto, Japan",waypoints:["Kiyomizu-dera, Kyoto, Japan","Sannenzaka, Kyoto, Japan","Ninenzaka, Kyoto, Japan"],destination:"Yasaka Shrine, Kyoto, Japan",mode:"transit"}],
+    "26": [{label:"Arashiyama · bosque → Tenryū-ji → río",origin:"Arashiyama Bamboo Forest, Kyoto, Japan",waypoints:["Tenryu-ji, Kyoto, Japan"],destination:"Togetsukyo Bridge, Kyoto, Japan",mode:"walking"}],
+    "27": [{label:"Nara a pie · ruta completa",origin:"Kintetsu-Nara Station, Nara, Japan",waypoints:["Nara Park, Nara, Japan","Todaiji Temple, Nara, Japan","Kasuga Taisha, Nara, Japan","Kofuku-ji, Nara, Japan"],destination:"Naramachi, Nara, Japan",mode:"walking"}],
+    "28": [{label:"Kinkaku-ji → Ginkaku-ji → Camino del Filósofo",origin:"Kinkaku-ji, Kyoto, Japan",waypoints:["Ginkaku-ji, Kyoto, Japan"],destination:"Philosopher's Path, Kyoto, Japan",mode:"transit"}],
+    "29": [{label:"Kioto → Namba, Osaka",origin:"Kyoto Station, Kyoto, Japan",waypoints:[],destination:"Namba Station, Osaka, Japan",mode:"transit"},{label:"Namba → Shinsaibashi → Hozenji → Dotonbori",origin:"Shinsaibashi-suji Shopping Street, Osaka, Japan",waypoints:["Hozenji Temple, Osaka, Japan"],destination:"Dotonbori, Osaka, Japan",mode:"walking"}],
+    "30": [{label:"Opción B · Osaka Castle → Kuromon → Nipponbashi → Shinsekai",origin:"Osaka Castle, Osaka, Japan",waypoints:["Kuromon Ichiba Market, Osaka, Japan","Den Den Town, Osaka, Japan"],destination:"Shinsekai, Osaka, Japan",mode:"transit"}]
   };
 
   function mapsRouteUrl(route){
@@ -560,3 +765,6 @@ function initTheme(){
   button.addEventListener('click',()=>apply(!document.body.classList.contains('dark-mode')));
 }
 initTheme();
+
+
+

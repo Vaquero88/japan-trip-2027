@@ -445,16 +445,30 @@ body.dark-mode #menuBtn{color:#fff;background:#202831;border-color:#46515d}
 @media(max-width:700px){.travel-videos-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.travel-video-info{padding:10px}.travel-video-info h3{font-size:14px}.travel-video-play{width:44px;height:32px;font-size:16px}}
 @media(max-width:430px){.travel-videos-grid{grid-template-columns:1fr 1fr}}
 
-/* V64 · Lugares: Tokio agrupado por zonas con enlaces directos a Google Maps */
+/* V67 · Lugares: navegación por ciudad, zonas y lugares */
 .places-intro{max-width:850px;margin:-4px 0 18px;line-height:1.6}
-.places-zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.places-city{margin:0 0 16px;border:1px solid var(--border);border-radius:18px;background:var(--panel);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.045)}
+.places-city-head{display:flex;align-items:center;gap:12px;padding:15px 16px;background:linear-gradient(135deg,var(--accentbg),var(--panel));cursor:pointer;list-style:none;user-select:none}
+.places-city-head::-webkit-details-marker{display:none}
+.places-city-head::marker{content:""}
+.places-city-head:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.places-city[open]>.places-city-head{border-bottom:1px solid var(--border)}
+.places-city-head h2{margin:3px 0;font-size:21px;line-height:1.2}
+.places-zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:14px;padding:14px}
 .places-zone{border:1px solid var(--border);border-radius:18px;background:var(--panel);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.045)}
-.places-zone-head{display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--accentbg),var(--panel))}
+.places-zone-head{display:flex;align-items:center;gap:12px;padding:15px 16px;background:linear-gradient(135deg,var(--accentbg),var(--panel));cursor:pointer;list-style:none;user-select:none}
+.places-zone-head::-webkit-details-marker{display:none}
+.places-zone-head::marker{content:""}
+.places-zone-head:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.places-zone[open] .places-zone-head{border-bottom:1px solid var(--border)}
 .places-zone-icon{width:44px;height:44px;border-radius:13px;background:var(--panel);display:grid;place-items:center;font-size:24px;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.places-zone-head h2{margin:3px 0 0;font-size:19px;line-height:1.2}
+.places-zone-head h2{margin:3px 0 0;font-size:19px;line-height:1.2;flex:1}
+.places-toggle{margin-left:auto;color:var(--accent);font-size:23px;line-height:1;transition:transform .18s ease}
+.places-zone[open] .places-toggle,.places-city[open]>.places-city-head .places-toggle{transform:rotate(180deg)}
 .places-list{padding:7px 10px 10px}
 .places-list a{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:11px;color:var(--text);text-decoration:none;font-size:13px;line-height:1.35;transition:.15s ease}
 .places-list a:hover{background:var(--accentbg);color:var(--accent);transform:translateX(2px)}
 .places-list a span{flex:1}
 .places-list a b{font-size:13px;color:var(--accent);opacity:.75}
 @media(max-width:800px){.places-zones{grid-template-columns:1fr}.places-zone-head h2{font-size:18px}}
+@media(max-width:560px){.places-city-head{padding:13px}.places-zones{padding:10px}}

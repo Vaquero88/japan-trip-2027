@@ -43,15 +43,16 @@ const TRIP = {
     ["19","Tokio","⛩️ Asakusa · 🌳 Ueno · 🎮 Akihabara"],
     ["20","Tokio","🐟 Toyosu · 🌊 Odaiba · 🌃 Shibuya · Fiesta"],
     ["21","Tokio","⛩️ Meiji Jingu · 🛍️ Harajuku · 🎭 Kabuki · 🌃 Shinjuku"],
-    ["22","Nikko","⛩️ Toshogu · 🌊 Lago Chuzenji · 💦 Kegon Falls"],
-    ["23","Hakone","🚆 Tokio → Hakone · ♨️ Fukuzumiro"],
-    ["24","Kioto","🚄 Hakone → Kioto · Gion · Pontocho"],
+    ["22","Nikko","⛩️ Tōshō-gū · 🌉 Shinkyō · 💦 Kegon opcional"],
+    ["23","Hakone","🚆 Tokio → Hakone · 💧 Tamadare · ♨️ Fukuzumiro"],
+    ["24","Kioto","🚄 Hakone → Kioto · 🏮 Gion · Pontocho"],
     ["25","Kioto","⛩️ Fushimi Inari · Kiyomizu-dera"],
     ["26","Kioto","🎋 Arashiyama · Tenryu-ji"],
-    ["27","Nara","🦌 Excursión a Nara desde Kioto · ⛩️ Todai-ji · Naramachi"],
-    ["28","Kioto","🏯 Kinkaku-ji / Ginkaku-ji · tarde libre"],
-    ["29","Osaka","🚆 Kioto → Osaka · Dotonbori"],
-    ["30","Osaka","🎢 Universal / 🏯 Castillo / 🎮 Den Den Town"],
+    ["27","Nara","🦌 Nara Park · Tōdaiji · Kasuga Taisha · Kōfuku-ji · Naramachi"],
+    ["28","Kioto","✨ Kinkaku-ji · Ginkaku-ji · Camino del Filósofo · libre"],
+    ["29","Osaka","🚆 Kioto → Osaka · Namba · Dotonbori · Hozenji · Shinsaibashi"],
+    ["30","Osaka","🎢 USJ o 🏯 Osaka tradicional · Kuromon · Nipponbashi · Shinsekai"],
     ["31","Osaka → Madrid","✈️ KIX → Pekín → Madrid"]
   ]
 };
+
