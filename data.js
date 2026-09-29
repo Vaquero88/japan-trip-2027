@@ -45,13 +45,13 @@ const TRIP = {
     ["21","Tokio","⛩️ Meiji Jingu · 🛍️ Harajuku · 🎭 Kabuki · 🌃 Shinjuku"],
     ["22","Nikko","⛩️ Tōshō-gū · 🌉 Shinkyō · 💦 Kegon opcional"],
     ["23","Hakone","🚆 Tokio → Hakone · 💧 Tamadare · ♨️ Fukuzumiro"],
-    ["24","Kioto","🚄 Hakone → Kioto · 🏮 Gion · Pontocho"],
-    ["25","Kioto","⛩️ Fushimi Inari · Kiyomizu-dera"],
+    ["24","Kioto","🚄 Hakone → Kioto · 🍜 Nishiki opcional · 🏮 Gion · Pontocho"],
+    ["25","Kioto","🛍️ Tenjin-san · Kinkaku-ji"],
     ["26","Kioto","🎋 Arashiyama · Tenryu-ji"],
     ["27","Nara","🦌 Nara Park · Tōdaiji · Kasuga Taisha · Kōfuku-ji · Naramachi"],
-    ["28","Kioto","✨ Kinkaku-ji · Ginkaku-ji · Camino del Filósofo · libre"],
+    ["28","Kioto","⛩️ Fushimi Inari · Kiyomizu-dera · Ginkaku-ji · Camino del Filósofo"],
     ["29","Osaka","🚆 Kioto → Osaka · Namba · Dotonbori · Hozenji · Shinsaibashi"],
-    ["30","Osaka","🎢 USJ o 🏯 Osaka tradicional · Kuromon · Nipponbashi · Shinsekai"],
+    ["30","Osaka","🏯 Osaka Castle · Kuromon · Nipponbashi · Shinsekai"],
     ["31","Osaka → Madrid","✈️ KIX → Pekín → Madrid"]
   ]
 };

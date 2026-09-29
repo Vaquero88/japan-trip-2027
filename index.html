@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>🇯🇵 Japan Trip 2027</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3P8Q5J4vQ0W8r3uQ0QjQ9c2Q8f4X0=" crossorigin="">
 </head>
 <body>
 <div class="app">
@@ -118,6 +117,7 @@
 
     <section id="transportes" class="section">
       <div class="section-title"><div><span class="eyebrow">CÓMO MOVERSE</span><h1>🚆 Transportes</h1></div></div>
+      <div class="panel transport-review-note"><strong>Precios y reservas · revisión 29/09/2026</strong><p>Precios por persona, en yenes y según las tarifas oficiales consultadas hoy. El viaje es en mayo de 2027: los precios y, sobre todo, los horarios se deben volver a comprobar antes de salir. En trayectos urbanos usa Suica/PASMO/IC cuando el operador la admita; si no, compra billete en la máquina. Los trenes locales, metros y buses no se reservan. Sí conviene reservar el Limited Express a Nikko y el Shinkansen si queréis sentaros juntos.</p><p><strong>Pases que encajan:</strong> NIKKO PASS All Area cuesta ahora ¥8.000 y cubre ida/vuelta base Asakusa–Nikko y buses Tobu de Nikko; el Limited Express se paga aparte. En Osaka, el domingo 30 el Enjoy Eco Card cuesta ahora ¥620, pero solo compensa si hacéis varios viajes en Metro. No recomiendo comprar Hakone Freepass para este plan corto y tranquilo; pagad los trayectos sueltos.</p><div class="transport-source-links"><a href="https://www.tobu.co.jp/en/ticket/nikko/all.html" target="_blank" rel="noopener">Tobu · NIKKO PASS</a><a href="https://www.tobu.co.jp/en/express_info/purchase/" target="_blank" rel="noopener">Tobu · reservas y suplemento</a><a href="https://www.odakyu.jp/english/transport/riding/howto/" target="_blank" rel="noopener">Odakyu · Hakone Freepass</a><a href="https://global.jr-central.co.jp/en/info/fare/" target="_blank" rel="noopener">JR Central · tarifas Shinkansen</a><a href="https://www2.city.kyoto.lg.jp/kotsu/webguide/en/fare/fare_bus.html" target="_blank" rel="noopener">Kioto · bus y tarifas</a><a href="https://subway.osakametro.co.jp/en/guide/page/enjoy-eco.php/information_service/index.php" target="_blank" rel="noopener">Osaka Metro · pase diario</a><a href="https://www.taxi-tokyo.or.jp/english/call/pricelist.html" target="_blank" rel="noopener">Tokyo Taxi · tarifas</a><a href="https://www.nankai.co.jp/en_railway/access-timetable" target="_blank" rel="noopener">Nankai · horarios a KIX</a></div></div>
       <div id="transportList" class="transport-days"></div>
     </section>
 
@@ -386,8 +386,16 @@
 
       <details class="places-city">
         <summary class="places-city-head"><span class="places-zone-icon">⛩️</span><div><span class="eyebrow">JAPÓN · CIUDAD</span><h2>Kioto</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
-        <p class="muted places-intro">Zonas de Kioto organizadas según el itinerario del viaje: Gion y Pontocho, Fushimi Inari, Kiyomizu-dera, Arashiyama, Kinkaku-ji y Ginkaku-ji.</p>
+        <p class="muted places-intro">Zonas de Kioto según el itinerario: mercados tradicionales, Gion y Pontocho, Fushimi Inari, Higashiyama, Arashiyama, Kinkaku-ji y Ginkaku-ji.</p>
         <div class="places-zones">
+          <details class="places-zone" id="zona-kioto-mercados">
+            <summary class="places-zone-head"><span class="places-zone-icon">🛍️</span><div><span class="eyebrow">KIOTO · MERCADOS</span><h2>Mercados tradicionales</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
+            <div class="places-list">
+              <a href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto" target="_blank" rel="noopener noreferrer">🍜 <span>Nishiki Market · opcional para comer el 24</span><b>↗</b></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Kitano+Tenmangu+Shrine+Kyoto" target="_blank" rel="noopener noreferrer">🛍️ <span>Tenjin-san · mercado mensual en Kitano Tenmangu · día 25</span><b>↗</b></a>
+            </div>
+          </details>
+
           <details class="places-zone" id="zona-kioto-gion-pontocho">
             <summary class="places-zone-head"><span class="places-zone-icon">🏮</span><div><span class="eyebrow">KIOTO · GION · PONTOCHO</span><h2>Gion · Pontocho</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
             <div class="places-list">
@@ -460,7 +468,7 @@
 
       <details class="places-city">
         <summary class="places-city-head"><span class="places-zone-icon">🌃</span><div><span class="eyebrow">JAPÓN · CIUDAD</span><h2>Osaka</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
-        <p class="muted places-intro">Lugares agrupados por zonas para el día de llegada y la alternativa tradicional del día 30. USJ se plantea como jornada independiente.</p>
+        <p class="muted places-intro">Lugares agrupados por zonas para el día de llegada y el recorrido tradicional de Osaka del día 30.</p>
         <div class="places-zones">
           <details class="places-zone" id="zona-osaka-namba">
             <summary class="places-zone-head"><span class="places-zone-icon">🍜</span><div><span class="eyebrow">OSAKA · NAMBA · MINAMI</span><h2>Namba · Dotonbori · Hozenji · Shinsaibashi</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
@@ -486,12 +494,7 @@
               <a href="https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Osaka" target="_blank" rel="noopener noreferrer">🗼 <span>Tsūtenkaku</span><b>↗</b></a>
             </div>
           </details>
-          <details class="places-zone" id="zona-osaka-usj">
-            <summary class="places-zone-head"><span class="places-zone-icon">🎢</span><div><span class="eyebrow">OSAKA · BAHÍA</span><h2>Universal Studios Japan</h2></div><span class="places-toggle" aria-hidden="true">⌄</span></summary>
-            <div class="places-list">
-              <a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan" target="_blank" rel="noopener noreferrer">🎢 <span>Universal Studios Japan · USJ</span><b>↗</b></a>
-            </div>
-          </details>
+
         </div>
       </details>
 
@@ -614,7 +617,6 @@
   </main>
 </div>
 <script src="data.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
