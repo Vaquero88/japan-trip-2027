@@ -44,7 +44,7 @@ const TRIP = {
     ["20","Tokio","🐟 Toyosu · 🌊 Odaiba · 🌃 Shibuya · Fiesta"],
     ["21","Tokio","⛩️ Meiji Jingu · 🛍️ Harajuku · 🎭 Kabuki · 🌃 Shinjuku"],
     ["22","Nikko","⛩️ Tōshō-gū · 🌉 Shinkyō · 💦 Kegon opcional"],
-    ["23","Hakone","🚆 Tokio → Hakone · 💧 Tamadare · ♨️ Fukuzumiro"],
+    ["23","Hakone","🌊 Lago Ashi · ⛩️ Hakone-jinja · 🚡 Ōwakudani · ♨️ Fukuzumiro"],
     ["24","Kioto","🚄 Hakone → Kioto · 🍜 Nishiki opcional · 🏮 Gion · Pontocho"],
     ["25","Kioto","🛍️ Tenjin-san · Kinkaku-ji"],
     ["26","Kioto","🎋 Arashiyama · Tenryu-ji"],
