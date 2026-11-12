@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>🇯🇵 Japan Trip 2027</title>
+  <meta name="theme-color" content="#d33">
+  <meta name="description" content="Tu guía del viaje a Japón: itinerario, alojamientos, transportes y mapas de mayo de 2027.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Japan Trip">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,6 +34,7 @@
       <button data-section="notas">📝 Notas y tips</button>
       <button data-section="documentacion">📁 Documentación</button>
       <button id="themeToggle" type="button" aria-label="Cambiar a modo noche">🌙 Modo noche</button>
+      <button id="pwaInstallBtn" type="button" hidden>⬇️ Instalar app</button>
       <button id="closeMenuBtn" type="button" class="mobile-close-menu">✕ Esconder menú</button>
     </nav>
   </aside>
@@ -618,5 +628,6 @@
 </div>
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script src="pwa.js"></script>
 </body>
 </html>
